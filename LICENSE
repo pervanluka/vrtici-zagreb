@@ -23,5 +23,10 @@ SOFTWARE.
 ---
 
 Third-party files in `site/vendor/` and `tests/fixtures/` are subject to their
-own licences. See `site/vendor/LICENSE` and `tests/fixtures/README.md` for
-details.
+own licences:
+
+- `site/vendor/leaflet.js`, `site/vendor/leaflet.css` — BSD 2-Clause,
+  see `site/vendor/LICENSE`.
+- `site/vendor/fonts/*.woff2` — Bricolage Grotesque and Instrument Sans, both
+  under the SIL Open Font License 1.1, see `site/vendor/FONTS-LICENSE`.
+- `tests/fixtures/` — see `tests/fixtures/README.md`.

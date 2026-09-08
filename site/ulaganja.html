@@ -6,62 +6,81 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ulaganja — slobodna mjesta u zagrebačkim vrtićima</title>
 <link rel="stylesheet" href="stil.css">
-<style>
-  main { padding: 0 16px; }
-  .upozorenje {
-    margin: 16px; padding: 10px 12px; border: 1px solid #e0b23c; background: #fdf6e3;
-    border-radius: 4px; font-size: 0.9rem;
-  }
-  svg { width: 100%; max-width: 780px; height: 260px; border: 1px solid var(--rub); border-radius: 4px; }
-  .os { stroke: #ccc; stroke-width: 1; }
-  .crta { fill: none; stroke: #1f7a3d; stroke-width: 2.5; }
-  .tocka { fill: #1f7a3d; }
-  .oznaka { font-size: 11px; fill: #5c5c5c; }
-  #ulaganjaCetvrt { padding-left: 20px; }
-  #ulaganjaCetvrt h3 { margin-bottom: 4px; }
-</style>
 </head>
 <body>
-<header>
-  <h1>Ulaganja i slobodna mjesta</h1>
-  <nav><a href="index.html">Karta</a><a href="lista.html">Lista</a><a href="trend.html">Trend</a><a href="ulaganja.html">Ulaganja</a><a href="podaci.html">Podaci</a></nav>
-  <p class="napomena" id="napomena"></p>
+<header class="zaglavlje">
+  <div class="wrap">
+    <a class="marka" href="index.html">
+      <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true" focusable="false"><rect x="1" y="1" width="24" height="24" rx="7" fill="#0f1115"/><circle cx="13" cy="10.5" r="3.4" fill="#f6f5f2"/><path d="M7.6 19.4h10.8" stroke="#c2410c" stroke-width="2.2" stroke-linecap="round"/></svg>
+      <span>Mjesta u vrtićima</span>
+    </a>
+    <nav class="navigacija" aria-label="Glavna navigacija">
+      <a href="index.html">Karta</a>
+      <a href="lista.html">Lista</a>
+      <a href="trend.html">Trend</a>
+      <a href="ulaganja.html" aria-current="page">Ulaganja</a>
+      <a href="podaci.html">Podaci</a>
+    </nav>
+    <p class="ograda">Nezavisan projekt otvorenih podataka.<br><strong>Nije službena stranica Grada Zagreba.</strong></p>
+  </div>
 </header>
 
-<p class="upozorenje">
-  Iznosi su planirani za navedenu godinu i često pokrivaju samo projektnu dokumentaciju ili
-  imovinsko-pravne odnose, ne gradnju. Usporedni prikaz ulaganja i slobodnih mjesta ne
-  pokazuje uzročnost. Ulaganje se s ustanovom povezuje po nazivu; kad se naziv ne pogodi,
-  ulaganju se ne može pripisati gradska četvrt, ali to nije tvrdnja da ustanova ne postoji.
-</p>
+<div class="wrap">
 
-<main>
+  <div class="naslovni">
+    <p class="znacka" id="znacka"></p>
+    <h1>Ulaganja i slobodna mjesta</h1>
+    <p class="uvod">Kapitalna ulaganja Grada u predškolske ustanove, uz kretanje slobodnih mjesta u
+       istoj gradskoj četvrti.</p>
+    <p class="napomena" id="napomena"></p>
+  </div>
+
+  <p class="upozorenje">
+    <span>
+      <span class="naslov-upozorenja">Usporedni prikaz ulaganja i slobodnih mjesta ne pokazuje uzročnost.</span>
+      Iznosi su planirani za navedenu godinu i često pokrivaju samo projektnu dokumentaciju ili
+      imovinsko-pravne odnose, ne gradnju. Ulaganje se s ustanovom povezuje po nazivu; kad se naziv
+      ne pogodi, ulaganju se ne može pripisati gradska četvrt, ali to nije tvrdnja da ustanova ne
+      postoji.
+    </span>
+  </p>
+
   <h2>Kapitalna ulaganja u predškolske ustanove</h2>
   <p class="rezultat" id="rezultatUlaganja" role="status" aria-live="polite"></p>
-  <table>
-    <caption class="napomena" id="caption"></caption>
-    <thead>
-      <tr>
-        <th scope="col">Ustanova</th>
-        <th scope="col" data-polje="godina" data-naslov="Godina" tabindex="0">Godina</th>
-        <th scope="col">Opis radova</th>
-        <th scope="col" data-polje="iznos" data-naslov="Planirani iznos" tabindex="0">Planirani iznos</th>
-        <th scope="col">Spajanje</th>
-      </tr>
-    </thead>
-    <tbody id="tijeloUlaganja"></tbody>
-  </table>
+
+  <div class="tablica-okvir">
+    <table>
+      <caption id="caption"></caption>
+      <thead>
+        <tr>
+          <th scope="col">Ustanova</th>
+          <th scope="col" data-polje="godina" data-naslov="Godina" tabindex="0">Godina</th>
+          <th scope="col">Opis radova</th>
+          <th scope="col" data-polje="iznos" data-naslov="Planirani iznos" tabindex="0">Planirani iznos</th>
+          <th scope="col">Spajanje</th>
+        </tr>
+      </thead>
+      <tbody id="tijeloUlaganja"></tbody>
+    </table>
+  </div>
 
   <h2>Ulaganja i kretanje slobodnih mjesta po gradskoj četvrti</h2>
+
   <div class="filtri">
     <label for="cetvrtOdabir">Gradska četvrt<select id="cetvrtOdabir"></select></label>
   </div>
-  <p id="napomenaCetvrt" class="napomena" style="margin: 8px 16px;"></p>
-  <div class="graf"><svg id="grafCetvrt" viewBox="0 0 780 260" role="img" aria-labelledby="opisCetvrt"></svg>
-    <p id="opisCetvrt" class="napomena"></p>
+
+  <div class="kartica graf">
+    <svg id="grafCetvrt" viewBox="0 0 1080 320" role="img" aria-labelledby="opisCetvrt"></svg>
+    <div class="podnozje">
+      <p id="napomenaCetvrt" style="margin: 0"></p>
+      <p id="opisCetvrt" class="napomena" role="status" aria-live="polite"></p>
+    </div>
   </div>
-  <div id="ulaganjaCetvrt"></div>
-</main>
+
+  <div class="kartica" id="ulaganjaCetvrt"></div>
+
+</div>
 
 <script src="app.js"></script>
 <script>
@@ -127,50 +146,15 @@
     });
   });
 
-  // Isti crtež kao trend.html, ovdje za jednu odabranu četvrt umjesto izbora
-  // pogleda — brojevi u SVG-u dolaze iz naših vlastitih datuma/zbrojeva, ne iz
-  // naziva ustanova, pa nema potrebe za VZ.ociscen ovdje.
-  function crtajGraf(datumi, vrijednosti, naslov) {
-    var poznate = vrijednosti.filter(function (v) { return v !== null; });
-    var max = Math.max.apply(null, poznate.concat([1]));
-    var L = 48, R = 16, T = 16, B = 40, W = 780, H = 260;
-    var sirina = W - L - R, visina = H - T - B;
-
-    function x(i) { return datumi.length < 2 ? L + sirina / 2 : L + (sirina * i) / (datumi.length - 1); }
-    function y(v) { return T + visina - (visina * v) / max; }
-
-    var d = "", tocke = "", oznake = "";
-    var zapoceto = false;
-    vrijednosti.forEach(function (v, i) {
-      if (v === null) { zapoceto = false; return; }
-      d += (zapoceto ? " L" : " M") + x(i).toFixed(1) + "," + y(v).toFixed(1);
-      zapoceto = true;
-      tocke += '<circle class="tocka" cx="' + x(i).toFixed(1) + '" cy="' + y(v).toFixed(1) + '" r="4"><title>' +
-               datumi[i] + ": " + v + "</title></circle>";
-      oznake += '<text class="oznaka" x="' + x(i).toFixed(1) + '" y="' + (H - 20) +
-                '" text-anchor="middle">' + datumi[i].slice(0, 7) + "</text>";
-    });
-
-    document.getElementById("grafCetvrt").innerHTML =
-      '<line class="os" x1="' + L + '" y1="' + (T + visina) + '" x2="' + (W - R) + '" y2="' + (T + visina) + '"/>' +
-      '<line class="os" x1="' + L + '" y1="' + T + '" x2="' + L + '" y2="' + (T + visina) + '"/>' +
-      '<text class="oznaka" x="4" y="' + (T + 10) + '">' + max + "</text>" +
-      '<text class="oznaka" x="4" y="' + (T + visina) + '">0</text>' +
-      '<path class="crta" d="' + d.trim() + '"/>' + tocke + oznake;
-
-    var nedostajuciDatumi = datumi.filter(function (dd, i) { return vrijednosti[i] === null; });
-    document.getElementById("opisCetvrt").textContent =
-      "Slobodna mjesta — " + naslov + ". Snimaka s podatkom: " + poznate.length + "/" + datumi.length +
-      (nedostajuciDatumi.length ? ". Bez podatka za: " + nedostajuciDatumi.join(", ") + "." : ".");
-  }
-
   function crtajCetvrt() {
     var cetvrt = document.getElementById("cetvrtOdabir").value;
     var tocke = serija.po_cetvrti[cetvrt] || {};
     var vrijednosti = serija.datumi.map(function (d) {
       return Object.prototype.hasOwnProperty.call(tocke, d) ? tocke[d] : null;
     });
-    crtajGraf(serija.datumi, vrijednosti, cetvrt);
+    // Isti crtač kao na trend.html — vidi VZ.crtajGraf u app.js.
+    VZ.crtajGraf(document.getElementById("grafCetvrt"), serija.datumi, vrijednosti,
+                 cetvrt, document.getElementById("opisCetvrt"));
 
     // Četvrt se ulaganju pripisuje preko naziva ustanove iz tablice slobodnih
     // mjesta. Nespojeno ulaganje znači samo da naziv nije pogođen — najčešće
@@ -197,6 +181,9 @@
 
     var kontejner = document.getElementById("ulaganjaCetvrt");
     kontejner.innerHTML = "";
+    var naslov = document.createElement("h3");
+    naslov.textContent = "Ulaganja u četvrti: " + cetvrt;
+    kontejner.appendChild(naslov);
     if (!uOvojCetvrti.length) {
       var p = document.createElement("p");
       p.className = "napomena";
@@ -205,6 +192,7 @@
       return;
     }
     var lista = document.createElement("ul");
+    lista.className = "popis-ulaganja";
     uOvojCetvrti.forEach(function (u) {
       var li = document.createElement("li");
       li.textContent = u.godina + " — " + u.naziv + ": " + u.opis_radova + " (" + formatIznos(u.iznos) + ")";
@@ -222,8 +210,10 @@
     serija = serijaData;
     ulaganja = ulaganjaData.ulaganja;
 
-    var poruka = "Stanje slobodnih mjesta na dan " + ustanoveData.datum_stanja + ". " + VZ.oznakaRazine() +
-      " Ulaganja pokrivaju godine: " + ulaganjaData.godine.join(", ") + ".";
+    var poruka = "Stanje slobodnih mjesta na dan " + VZ.datumStanja(ustanoveData.datum_stanja) + " " +
+      VZ.oznakaRazine() + " Ulaganja pokrivaju godine: " + ulaganjaData.godine.join(", ") + ".";
+    document.getElementById("znacka").textContent =
+      "Stanje na dan " + VZ.datumStanja(ustanoveData.datum_stanja);
     document.getElementById("napomena").textContent = poruka;
     document.getElementById("caption").textContent = poruka;
 

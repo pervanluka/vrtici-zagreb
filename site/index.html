@@ -9,24 +9,70 @@
 <link rel="stylesheet" href="stil.css">
 </head>
 <body>
-<header>
-  <h1>Slobodna mjesta u zagrebačkim vrtićima</h1>
-  <nav><a href="index.html">Karta</a><a href="lista.html">Lista</a><a href="trend.html">Trend</a><a href="ulaganja.html">Ulaganja</a><a href="podaci.html">Podaci</a></nav>
-  <p class="napomena" id="napomena"></p>
+<header class="zaglavlje">
+  <div class="wrap">
+    <a class="marka" href="index.html">
+      <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true" focusable="false"><rect x="1" y="1" width="24" height="24" rx="7" fill="#0f1115"/><circle cx="13" cy="10.5" r="3.4" fill="#f6f5f2"/><path d="M7.6 19.4h10.8" stroke="#c2410c" stroke-width="2.2" stroke-linecap="round"/></svg>
+      <span>Mjesta u vrtićima</span>
+    </a>
+    <nav class="navigacija" aria-label="Glavna navigacija">
+      <a href="index.html" aria-current="page">Karta</a>
+      <a href="lista.html">Lista</a>
+      <a href="trend.html">Trend</a>
+      <a href="ulaganja.html">Ulaganja</a>
+      <a href="podaci.html">Podaci</a>
+    </nav>
+    <p class="ograda">Nezavisan projekt otvorenih podataka.<br><strong>Nije službena stranica Grada Zagreba.</strong></p>
+  </div>
 </header>
 
-<div class="filtri">
-  <label>Gradska četvrt<select id="cetvrt"></select></label>
-  <label>Vrsta ustanove<select id="vrsta"></select></label>
-  <label>Dobna skupina<select id="dobna"></select></label>
-  <label>Uzrast<select id="uzrast"></select></label>
-  <label>Program<select id="program"></select></label>
-  <label>Pretraži<input id="tekst" type="search" placeholder="naziv ili adresa"></label>
-  <label>Samo sa slobodnim mjestima<input id="samo" type="checkbox" checked></label>
-</div>
+<div class="wrap">
 
-<div id="karta"></div>
-<p class="rezultat" id="rezultat" role="status" aria-live="polite"></p>
+  <div class="hero">
+    <div>
+      <p class="znacka" id="znacka"></p>
+      <h1>Ima li mjesta u vrtiću blizu vas?</h1>
+      <p class="uvod">Pretražite sve gradske, privatne i vjerske vrtiće te obrte dadilja na jednom
+         mjestu — i pogledajte kako se broj mjesta mijenjao kroz godine.</p>
+      <p class="napomena" id="napomena"></p>
+    </div>
+
+    <div class="brojke">
+      <div class="brojka brojka--glavna">
+        <div class="oznaka-brojke">Slobodnih upisnih mjesta u Zagrebu</div>
+        <div class="vrijednost" id="ukupnoMjesta">—</div>
+      </div>
+      <div class="brojka">
+        <div class="oznaka-brojke">Ustanova sa slobodnim mjestima</div>
+        <div class="vrijednost" id="ustanovaSMjestima">—</div>
+      </div>
+      <div class="brojka">
+        <div class="oznaka-brojke">Lokacija ustanova u snimci</div>
+        <div class="vrijednost" id="brojLokacija">—</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="filtri">
+    <label for="cetvrt">Gradska četvrt<select id="cetvrt"></select></label>
+    <label for="vrsta">Vrsta ustanove<select id="vrsta"></select></label>
+    <label for="dobna">Dobna skupina<select id="dobna"></select></label>
+    <label for="uzrast">Uzrast<select id="uzrast"></select></label>
+    <label for="program">Program<select id="program"></select></label>
+    <label for="tekst">Pretraži<input id="tekst" type="search" placeholder="naziv ili adresa"></label>
+    <label class="prekidac" for="samo"><input id="samo" type="checkbox" checked>Samo sa slobodnim mjestima</label>
+  </div>
+
+  <div class="karta-okvir">
+    <div id="karta"></div>
+    <p class="legenda">
+      <span><span class="uzorak-ima" aria-hidden="true">7</span>ima mjesta — pin nosi broj</span>
+      <span><span class="uzorak-nema" aria-hidden="true"></span>trenutno puno — prazan pin</span>
+    </p>
+  </div>
+  <p class="rezultat" id="rezultat" role="status" aria-live="polite"></p>
+
+</div>
 
 <script src="vendor/leaflet.js"></script>
 <script src="app.js"></script>
@@ -69,6 +115,23 @@
            "<small>" + kontakt + "<br>" + VZ.oznakaRazine() + "</small>";
   }
 
+  // Ustanova sa slobodnim mjestima dobiva pun pin s brojem, ona bez njih
+  // prazan prsten. Razlika je u ispuni i sadržaju, ne samo u boji — inače je
+  // pin neupotrebljiv za daltoniste i u crno-bijelom ispisu.
+  function ikona(u) {
+    var ima = u.slobodnih_prikaz > 0;
+    var natpis = VZ.ociscen(u.naziv) + (ima
+      ? " — slobodnih mjesta: " + u.slobodnih_prikaz
+      : " — trenutno nema slobodnih mjesta");
+    return L.divIcon({
+      className: "pin " + (ima ? "pin-ima" : "pin-nema"),
+      html: '<b role="img" aria-label="' + natpis + '">' + (ima ? u.slobodnih_prikaz : "") + "</b>",
+      iconSize: [34, 34],
+      iconAnchor: [17, 17],
+      popupAnchor: [0, -18]
+    });
+  }
+
   function crtaj() {
     var vidljive = VZ.filtriraj(sve, trenutniFiltri());
     sloj.clearLayers();
@@ -76,23 +139,37 @@
     vidljive.forEach(function (u) {
       u.objekti.forEach(function (o) {
         naKarti++;
-        L.circleMarker([o.y, o.x], {
-          radius: 7,
-          color: u.slobodnih_prikaz > 0 ? "#1f7a3d" : "#9a9a9a",
-          fillOpacity: 0.85
-        }).bindPopup(opis(u)).addTo(sloj);
+        L.marker([o.y, o.x], { icon: ikona(u), riseOnHover: true })
+          .bindPopup(opis(u))
+          .addTo(sloj);
       });
     });
     var bez = vidljive.length - vidljive.filter(function (u) { return u.objekti.length; }).length;
+    // Broj stoji kao vrijednost uz oznaku, nikad slijepljen s imenicom —
+    // hrvatski se broj i imenica slažu drugačije za 1, za 2–4 i za 0/5+.
     document.getElementById("rezultat").textContent =
-      vidljive.length + " ustanova, " + naKarti + " objekata na karti" +
-      (bez ? " (" + bez + " bez koordinata u otvorenim podacima)" : "");
+      "Prikazano — ustanova: " + vidljive.length + ", objekata na karti: " + naKarti +
+      (bez ? ", bez koordinata u otvorenim podacima: " + bez : "");
   }
 
   VZ.ucitaj().then(function (d) {
     sve = d.ustanove;
-    document.getElementById("napomena").textContent =
-      "Stanje na dan " + d.datum_stanja + ". " + VZ.oznakaRazine();
+    document.getElementById("znacka").textContent = "Stanje na dan " + VZ.datumStanja(d.datum_stanja);
+    document.getElementById("napomena").textContent = VZ.oznakaRazine();
+
+    // Sve brojke dolaze iz podataka; nijedna nije upisana u HTML.
+    var ukupno = sve.reduce(function (z, u) {
+      return z + u.mjesta.reduce(function (s, m) { return s + m.slobodnih; }, 0);
+    }, 0);
+    var sMjestima = sve.filter(function (u) {
+      return u.mjesta.some(function (m) { return m.slobodnih > 0; });
+    }).length;
+    var lokacija = sve.reduce(function (z, u) { return z + u.objekti.length; }, 0);
+    document.getElementById("ukupnoMjesta").textContent = ukupno.toLocaleString("hr-HR");
+    document.getElementById("ustanovaSMjestima").innerHTML =
+      sMjestima + '<span class="od">/' + sve.length + "</span>";
+    document.getElementById("brojLokacija").textContent = lokacija.toLocaleString("hr-HR");
+
     VZ.napuniOdabir(document.getElementById("cetvrt"), VZ.jedinstveno(sve, "cetvrt"), "sve četvrti");
     VZ.napuniOdabir(document.getElementById("vrsta"), VZ.jedinstveno(sve, "vrsta"), "sve vrste");
     var mjesta = sve.reduce(function (a, u) { return a.concat(u.mjesta); }, []);

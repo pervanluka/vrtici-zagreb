@@ -6,50 +6,68 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Trend — slobodna mjesta u zagrebačkim vrtićima</title>
 <link rel="stylesheet" href="stil.css">
-<style>
-  .graf { padding: 16px; }
-  svg { width: 100%; max-width: 780px; height: 260px; border: 1px solid var(--rub); border-radius: 4px; }
-  .os { stroke: #ccc; stroke-width: 1; }
-  .crta { fill: none; stroke: #1f7a3d; stroke-width: 2.5; }
-  .tocka { fill: #1f7a3d; }
-  .oznaka { font-size: 11px; fill: #5c5c5c; }
-  .upozorenje {
-    margin: 0 16px; padding: 10px 12px; border: 1px solid #e0b23c; background: #fdf6e3;
-    border-radius: 4px; font-size: 0.9rem;
-  }
-</style>
 </head>
 <body>
-<header>
-  <h1>Kretanje slobodnih mjesta</h1>
-  <nav><a href="index.html">Karta</a><a href="lista.html">Lista</a><a href="trend.html">Trend</a><a href="ulaganja.html">Ulaganja</a><a href="podaci.html">Podaci</a></nav>
-  <p class="napomena">Svaka točka je jedna mjesečna snimka, označena datumom stanja. Grad objavljuje samo trenutno stanje — ovu seriju čuva ovaj projekt. <span id="razina"></span></p>
+<header class="zaglavlje">
+  <div class="wrap">
+    <a class="marka" href="index.html">
+      <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true" focusable="false"><rect x="1" y="1" width="24" height="24" rx="7" fill="#0f1115"/><circle cx="13" cy="10.5" r="3.4" fill="#f6f5f2"/><path d="M7.6 19.4h10.8" stroke="#c2410c" stroke-width="2.2" stroke-linecap="round"/></svg>
+      <span>Mjesta u vrtićima</span>
+    </a>
+    <nav class="navigacija" aria-label="Glavna navigacija">
+      <a href="index.html">Karta</a>
+      <a href="lista.html">Lista</a>
+      <a href="trend.html" aria-current="page">Trend</a>
+      <a href="ulaganja.html">Ulaganja</a>
+      <a href="podaci.html">Podaci</a>
+    </nav>
+    <p class="ograda">Nezavisan projekt otvorenih podataka.<br><strong>Nije službena stranica Grada Zagreba.</strong></p>
+  </div>
 </header>
 
-<p class="upozorenje">
-  <strong>Ove tri snimke nisu izravno usporedive niti u jednom prikazu.</strong> Svaka pokriva drugačiji
-  skup vrsta ustanova i snimljena je u drugom mjesecu u godini: snimka iz ožujka 2023. ne uključuje obrte
-  dadilja, ona iz siječnja 2025. ne uključuje privatne i vjerske vrtiće, a tek snimka iz rujna 2026. pokriva
-  sve tri vrste. To utječe i na ukupnu liniju i na prikaz po gradskoj četvrti — rast u pojedinoj četvrti
-  može dijelom dolaziti od toga što ranija snimka jednostavno nije mjerila neku vrstu ustanove u toj
-  četvrti, a ne od stvarnog povećanja broja mjesta. Jedina vrsta ustanove izmjerena u sve tri snimke je
-  <strong>Gradski DV</strong> — to je najpouzdanija linija za usporedbu kroz vrijeme, no ni ona ne mijenja
-  činjenicu da su snimke iz različitih mjeseci u godini.
-</p>
+<div class="wrap">
 
-<div class="filtri">
-  <label for="pogled">Prikaži<select id="pogled">
-    <option value="ukupno">ukupno</option>
-    <option value="po_cetvrti">po gradskoj četvrti</option>
-    <option value="po_vrsti">po vrsti ustanove</option>
-  </select></label>
-  <label for="kategorija">Kategorija<select id="kategorija" disabled></select></label>
-</div>
+  <div class="naslovni">
+    <h1>Kretanje kroz godine</h1>
+    <p class="uvod">Grad objavljuje samo trenutno stanje i svaki mjesec ga prebriše. Ovu seriju čuva
+       ovaj projekt — zato je ovdje uopće ima.</p>
+    <p class="napomena">Svaka točka je jedna mjesečna snimka, označena datumom stanja.
+       <span id="razina"></span></p>
+  </div>
 
-<p id="napomenaPogleda" class="napomena" style="margin: 0 16px;"></p>
+  <p class="upozorenje">
+    <span>
+      <span class="naslov-upozorenja">Ove tri snimke nisu izravno usporedive niti u jednom prikazu.</span>
+      Svaka pokriva drugačiji skup vrsta ustanova i snimljena je u drugom mjesecu u godini: snimka iz
+      ožujka 2023. ne uključuje obrte dadilja, ona iz siječnja 2025. ne uključuje privatne i vjerske
+      vrtiće, a tek snimka iz rujna 2026. pokriva sve tri vrste. To utječe i na ukupnu liniju i na
+      prikaz po gradskoj četvrti — rast u pojedinoj četvrti može dijelom dolaziti od toga što ranija
+      snimka jednostavno nije mjerila neku vrstu ustanove u toj četvrti, a ne od stvarnog povećanja
+      broja mjesta. Jedina vrsta ustanove izmjerena u sve tri snimke je <strong>Gradski DV</strong>
+      — to je najpouzdanija linija za usporedbu kroz vrijeme, no ni ona ne mijenja činjenicu da su
+      snimke iz različitih mjeseci u godini.
+    </span>
+  </p>
 
-<div class="graf"><svg id="graf" viewBox="0 0 780 260" role="img" aria-labelledby="opis"></svg>
-  <p id="opis" class="napomena"></p>
+  <div class="filtri">
+    <label for="pogled">Prikaži<select id="pogled">
+      <option value="ukupno">ukupno</option>
+      <option value="po_cetvrti">po gradskoj četvrti</option>
+      <option value="po_vrsti">po vrsti ustanove</option>
+    </select></label>
+    <label for="kategorija">Kategorija<select id="kategorija" disabled></select></label>
+  </div>
+
+  <div class="kartica graf">
+    <svg id="graf" viewBox="0 0 1080 320" role="img" aria-labelledby="opis"></svg>
+    <div class="podnozje">
+      <p id="napomenaPogleda" style="margin: 0"></p>
+      <p id="opis" class="napomena" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <div class="vrste" id="vrste"></div>
+
 </div>
 
 <script src="app.js"></script>
@@ -70,42 +88,11 @@
 
   function crtaj() {
     var izbor = nizVrijednosti();
-    var datumi = serija.datumi;
-    var vrijednosti = datumi.map(function (d) {
+    var vrijednosti = serija.datumi.map(function (d) {
       return Object.prototype.hasOwnProperty.call(izbor.tocke, d) ? izbor.tocke[d] : null;
     });
-    var poznate = vrijednosti.filter(function (v) { return v !== null; });
-    var max = Math.max.apply(null, poznate.concat([1]));
-    var L = 48, R = 16, T = 16, B = 40, W = 780, H = 260;
-    var sirina = W - L - R, visina = H - T - B;
-
-    function x(i) { return datumi.length < 2 ? L + sirina / 2 : L + (sirina * i) / (datumi.length - 1); }
-    function y(v) { return T + visina - (visina * v) / max; }
-
-    var d = "", tocke = "", oznake = "";
-    var zapoceto = false;
-    vrijednosti.forEach(function (v, i) {
-      if (v === null) { zapoceto = false; return; }
-      d += (zapoceto ? " L" : " M") + x(i).toFixed(1) + "," + y(v).toFixed(1);
-      zapoceto = true;
-      tocke += '<circle class="tocka" cx="' + x(i).toFixed(1) + '" cy="' + y(v).toFixed(1) + '" r="4"><title>' +
-               datumi[i] + ": " + v + "</title></circle>";
-      oznake += '<text class="oznaka" x="' + x(i).toFixed(1) + '" y="' + (H - 20) +
-                '" text-anchor="middle">' + datumi[i].slice(0, 7) + "</text>";
-    });
-
-    document.getElementById("graf").innerHTML =
-      '<line class="os" x1="' + L + '" y1="' + (T + visina) + '" x2="' + (W - R) + '" y2="' + (T + visina) + '"/>' +
-      '<line class="os" x1="' + L + '" y1="' + T + '" x2="' + L + '" y2="' + (T + visina) + '"/>' +
-      '<text class="oznaka" x="4" y="' + (T + 10) + '">' + max + "</text>" +
-      '<text class="oznaka" x="4" y="' + (T + visina) + '">0</text>' +
-      '<path class="crta" d="' + d.trim() + '"/>' + tocke + oznake;
-
-    var nedostajuciDatumi = datumi.filter(function (dd, i) { return vrijednosti[i] === null; });
-    document.getElementById("opis").textContent =
-      "Slobodna mjesta — " + izbor.naslov + ". Snimaka s podatkom: " + poznate.length + "/" + datumi.length +
-      (nedostajuciDatumi.length ? ". Bez podatka za: " + nedostajuciDatumi.join(", ") + "." : ".");
-
+    VZ.crtajGraf(document.getElementById("graf"), serija.datumi, vrijednosti,
+                 izbor.naslov, document.getElementById("opis"));
     document.getElementById("napomenaPogleda").textContent = napomenaZaPogled(izbor);
   }
 
@@ -159,6 +146,35 @@
     crtaj();
   }
 
+  // Kartica po vrsti ustanove. Obojeni rub i riječi "izmjereno u sve tri
+  // snimke" nose istu informaciju — boja nikad nije jedini nositelj.
+  function crtajVrste() {
+    var kontejner = document.getElementById("vrste");
+    kontejner.innerHTML = "";
+    Object.keys(serija.po_vrsti)
+      .sort(function (a, b) { return a.localeCompare(b, "hr"); })
+      .forEach(function (vrsta) {
+        var tocke = serija.po_vrsti[vrsta];
+        var nedostaju = serija.datumi.filter(function (d) {
+          return !Object.prototype.hasOwnProperty.call(tocke, d);
+        });
+        var niz = serija.datumi.map(function (d) {
+          return Object.prototype.hasOwnProperty.call(tocke, d)
+            ? String(tocke[d])
+            : '<span class="prazno" aria-label="nema podatka">—</span>';
+        }).join(" → ");
+        var kartica = document.createElement("div");
+        kartica.className = "vrsta" + (nedostaju.length ? "" : " potpuna");
+        kartica.innerHTML =
+          '<div class="ime">' + VZ.ociscen(vrsta) + "</div>" +
+          '<div class="niz">' + niz + "</div>" +
+          '<div class="stanje">' + (nedostaju.length
+            ? "nema podatka za snimku od " + VZ.ociscen(nedostaju.join(", "))
+            : "izmjereno u svakoj snimci") + "</div>";
+        kontejner.appendChild(kartica);
+      });
+  }
+
   fetch("data/serija.json")
     .then(function (o) { return o.json(); })
     .then(function (s) {
@@ -166,6 +182,7 @@
       document.getElementById("pogled").addEventListener("change", osvjeziKategorije);
       document.getElementById("kategorija").addEventListener("change", crtaj);
       osvjeziKategorije();
+      crtajVrste();
     })
     .catch(function (e) {
       document.getElementById("opis").textContent = "Greška pri učitavanju serije: " + e.message;
