@@ -283,8 +283,16 @@ def parse_dadilje(tekst):
 
 
 def _parsiraj(datum_stanja, vrsta, tekst):
-    """Bira parser po (datumu, vrsti) — 2023. gradski/privatni skupovi imaju
-    drugačiji oblik zaglavlja od 2025., pa se ne mogu dijeliti isti parser."""
+    """Bira parser za jedan izvorni skup.
+
+    `Obrt dadilja` i `Privatni i vjerski DV` biraju se po vrsti, bez obzira na
+    datum — svaka od tih vrsta dolazi iz točno jednog skupa i jednog oblika.
+    Samo gradski skup ima dva oblika, pa se za njega gleda i datum: 2023. ima
+    jednoredno zaglavlje, 2025. troredo.
+
+    Ako bi neki budući skup donio npr. privatne vrtiće u obliku iz 2025.,
+    dispatch po vrsti bi ga poslao u krivi parser — tada ovdje treba i datum.
+    """
     if vrsta == "Obrt dadilja":
         return parse_dadilje(tekst)
     if vrsta == "Privatni i vjerski DV":

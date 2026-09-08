@@ -1,7 +1,7 @@
 """Tjedni obilazak stranice sa slobodnim mjestima.
 
 Ako se datum stanja nije promijenio, skripta ne radi ništa. Ako jest,
-parsira tablicu, provjeri zbrojeve i zapiše novi snapshot.
+parsira tablicu, provjeri zbrojeve i zapiše novu snimku.
 
 Pokretanje: python3 scripts/prikupi.py
 Izlazni kod 0 = nema promjene ili uspješan zapis, 1 = greška.
@@ -113,7 +113,7 @@ def main():
     put = zapisi_snapshot(SNAPSHOTI, datum_stanja, retci)
     obnovi_seriju()
     print(
-        f"nov snapshot {datum_stanja}: {len(retci)} redaka, "
+        f"nova snimka {datum_stanja}: {len(retci)} redaka, "
         f"{izracunato['ukupno']} slobodnih mjesta → {put.relative_to(KORIJEN)}"
     )
     return 0

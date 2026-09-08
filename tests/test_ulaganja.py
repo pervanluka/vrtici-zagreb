@@ -76,3 +76,57 @@ class TestParseUlaganja(unittest.TestCase):
     def test_nepoznata_godina_puca_umjesto_null_iznosa(self):
         with self.assertRaises(Exception):
             gradi.parse_ulaganja(GEOJSON, 2025)
+
+
+class TestPripojiCetvrt(unittest.TestCase):
+    """Spajanje ulaganja s ustanovama iz tablice slobodnih mjesta."""
+
+    def cetvrti(self):
+        return {
+            gradi.normaliziraj_naziv("DJEČJI VRTIĆ BAJKA"): "Trešnjevka - sjever",
+            gradi.normaliziraj_naziv("DJEČJI VRTIĆ IVANE BRLIĆ MAŽURANIĆ"): "Donja Dubrava",
+        }
+
+    def test_spojeno_ulaganje_dobiva_cetvrt(self):
+        u = gradi.parse_ulaganja(GEOJSON, 2024)
+        gradi.pripoji_cetvrt(u, self.cetvrti(), {})
+        bajka = next(x for x in u if x["naziv"].startswith('DV "Bajka"'))
+        self.assertTrue(bajka["spojena"])
+        self.assertEqual(bajka["cetvrt"], "Trešnjevka - sjever")
+
+    def test_nespojeno_ulaganje_nema_cetvrt_i_vraca_se_u_popisu(self):
+        u = gradi.parse_ulaganja(GEOJSON, 2024)
+        nespojena = gradi.pripoji_cetvrt(u, self.cetvrti(), {})
+        ivanja = next(x for x in u if x["naziv"] == "DV Ivanja Reka")
+        self.assertFalse(ivanja["spojena"])
+        self.assertIsNone(ivanja["cetvrt"])
+        self.assertIn("DV Ivanja Reka", nespojena)
+
+    def test_iznimka_spaja_ulaganje_kao_i_kontakt(self):
+        # Isti naziv se ne smije normalizirati na dva mjesta po dva pravila —
+        # 'DV I. B. Mažuranić' je postojeći vrtić u Cerskoj 22, Donja Dubrava.
+        geojson = {
+            "features": [
+                {"geometry": {"coordinates": [16.042, 45.823]},
+                 "properties": {"Vrsta_objekta": "PREDŠKOLSKE USTANOVE",
+                                "naziv": "DV I. B. Mažuranić", "Adresa": "Cerska ulica 22",
+                                "Opis_radova": "građenje", "plan24": "1500000"}},
+            ],
+        }
+        u = gradi.parse_ulaganja(geojson, 2024)
+        iznimke = {
+            gradi.normaliziraj_naziv("DV I. B. Mažuranić"):
+                gradi.normaliziraj_naziv("DJEČJI VRTIĆ IVANE BRLIĆ MAŽURANIĆ")
+        }
+        nespojena = gradi.pripoji_cetvrt(u, self.cetvrti(), iznimke)
+        self.assertEqual(nespojena, [])
+        self.assertTrue(u[0]["spojena"])
+        self.assertEqual(u[0]["cetvrt"], "Donja Dubrava")
+
+    def test_mapa_iznimaka_sadrzi_mazuranica(self):
+        # regresija: bez ovog retka Donja Dubrava prikazuje 2 umjesto 4 ulaganja
+        iznimke = gradi.ucitaj_iznimke()
+        self.assertEqual(
+            iznimke.get(gradi.normaliziraj_naziv("DV I. B. Mažuranić")),
+            gradi.normaliziraj_naziv("DJEČJI VRTIĆ IVANE BRLIĆ MAŽURANIĆ"),
+        )

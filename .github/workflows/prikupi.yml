@@ -26,6 +26,13 @@ jobs:
             echo "promjena=da" >> "$GITHUB_OUTPUT"
           fi
 
+      # Tablica snimaka u data/README.md nije generirana pri objavi (objavi.yml
+      # zadržava samo site/), pa bi bez ovog koraka zaostala za skupom već nakon
+      # prvog automatskog mergea. Skripta ne dira mrežu.
+      - name: Osvježi provenijenciju skupa
+        if: steps.kolektor.outputs.promjena == 'da'
+        run: python3 scripts/provenijencija.py
+
       - name: Otvori Pull Request
         if: steps.kolektor.outputs.promjena == 'da'
         env:
@@ -34,16 +41,25 @@ jobs:
           set -euo pipefail
           DATUM=$(ls data/slobodna-mjesta/*.csv | grep -v serija | sort | tail -1 | xargs basename | sed 's/.csv//')
           GRANA="podaci/$DATUM"
+          # Postojanje grane NIJE dokaz da PR postoji. Ako je `gh pr create` jednom
+          # pao, ovaj korak bi inače tjedno izlazio zeleno dok podaci vise na grani
+          # koju nitko ne gleda — zato se provjerava sam PR, i zato se glasno javlja.
           if git ls-remote --exit-code --heads origin "$GRANA" >/dev/null 2>&1; then
-            echo "Grana $GRANA već postoji na remoteu — PR za to stanje je vjerojatno otvoren i nije mergean."
+            if [ -n "$(gh pr list --head "$GRANA" --state open --json number --jq '.[].number')" ]; then
+              PORUKA="Grana $GRANA postoji, PR je otvoren i čeka pregled — nema novog dohvata."
+            else
+              PORUKA="Grana $GRANA postoji, ali OTVORENOG PR-A NEMA. Podaci za stanje $DATUM nisu ni u jednom PR-u — otvori ga ručno."
+            fi
+            echo "::warning::$PORUKA"
+            echo "$PORUKA" >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -b "$GRANA"
-          git add data/slobodna-mjesta/
+          git add data/slobodna-mjesta/ data/README.md
           if git diff --cached --quiet; then
-            echo "Nema promjena za commit — kolektor nije zapisao nov snapshot." >&2
+            echo "Nema promjena za commit — kolektor nije zapisao novu snimku." >&2
             exit 1
           fi
           git commit -m "podaci: slobodna mjesta na dan $DATUM"

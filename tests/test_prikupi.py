@@ -72,6 +72,19 @@ class TestSnapshoti(unittest.TestCase):
             self.assertEqual(len(linije), 7)  # zaglavlje + 2 × 3 retka
             self.assertTrue(linije[1].startswith("2025-01-01,"))
 
+    def test_ponovna_obnova_ne_udvostrucuje(self):
+        # gradi.py obnavlja seriju pri svakoj izgradnji, pa se obnovi_seriju()
+        # pokreće nad mapom u kojoj serija.csv već postoji — ako bi se čitala
+        # kao snimka, retci bi se udvostručili pri svakom pokretanju.
+        with tempfile.TemporaryDirectory() as d:
+            mapa = Path(d)
+            retci = parsiranje.parse_retke(FIXTURE)[:3]
+            prikupi.zapisi_snapshot(mapa, date(2025, 1, 1), retci)
+            prikupi.zapisi_snapshot(mapa, date(2026, 9, 1), retci)
+            prikupi.obnovi_seriju(mapa)
+            serija = prikupi.obnovi_seriju(mapa)
+            self.assertEqual(len(serija.read_text(encoding="utf-8").splitlines()), 7)
+
 
 if __name__ == "__main__":
     unittest.main()

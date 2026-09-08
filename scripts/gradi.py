@@ -1,4 +1,4 @@
-"""Spaja otvorene kontakt-skupove Grada sa zadnjim snapshotom slobodnih mjesta
+"""Spaja otvorene kontakt-skupove Grada sa zadnjom snimkom slobodnih mjesta
 i proizvodi statični JSON koji čita stranica.
 
 Pokretanje: python3 scripts/gradi.py
@@ -14,10 +14,13 @@ from datetime import date, datetime, timezone
 from pathlib import Path
 
 import parsiranje
+import prikupi
+import provenijencija
 
 KORIJEN = Path(__file__).resolve().parent.parent
 SNAPSHOTI = KORIJEN / "data" / "slobodna-mjesta"
-IZNIMKE = KORIJEN / "data" / "iznimke.csv"
+# ulaz za kod, ne dio objavljenog skupa — zato uz skripte, a ne pod data/
+IZNIMKE = Path(__file__).resolve().parent / "iznimke.csv"
 IZLAZ = KORIJEN / "site" / "data"
 SERIJA = KORIJEN / "data" / "slobodna-mjesta" / "serija.csv"
 # ista kanonska shema kao u prikupi.py — jedan izvor istine
@@ -112,21 +115,46 @@ def parse_ulaganja(geojson, godina):
                 "iznos": int(float(iznos)) if iznos else None,
                 "x": float(koord[0]) if koord[0] is not None else None,
                 "y": float(koord[1]) if koord[1] is not None else None,
-                "postojeca": None,  # popunjava main() kad zna ključeve ustanova
+                "spojena": None,  # popunjava pripoji_cetvrt() kad zna ključeve ustanova
+                "cetvrt": None,
             }
         )
     return ulaganja
 
 
+def pripoji_cetvrt(ulaganja, cetvrt_po_kljucu, iznimke):
+    """Ulaganjima pripiše četvrt ustanove iz tablice slobodnih mjesta.
+
+    Ide kroz istu mapu iznimaka kao spajanje kontakata (`spoji`) — isti naziv se
+    ne smije normalizirati na dva mjesta po dva pravila.
+
+    Nespojeno ulaganje NIJE dokaz da ustanova ne postoji, nego samo da joj naziv
+    u ovom skupu nije pogođen; zato se polje zove `spojena`, a ne `postojeca`.
+    Vraća nazive nespojenih ulaganja.
+    """
+    nespojena = []
+    for u in ulaganja:
+        kljuc = iznimke.get(u["kljuc"], u["kljuc"])
+        u["spojena"] = kljuc in cetvrt_po_kljucu
+        u["cetvrt"] = cetvrt_po_kljucu.get(kljuc)
+        if not u["spojena"]:
+            nespojena.append(u["naziv"])
+    return nespojena
+
+
 def ucitaj_iznimke(put=IZNIMKE):
-    """CSV s dva stupca: naziv_tablica,naziv_kontakt → mapa normaliziranih ključeva."""
+    """CSV s dva stupca: naziv,zamjena → mapa normaliziranih ključeva.
+
+    Jedna mapa za sva spajanja: i za kontakte i za ulaganja. Isti naziv ne smije
+    imati dva različita ručna ispravka ovisno o tome koji ga spoj traži.
+    """
     if not put.exists():
         return {}
     with put.open(encoding="utf-8", newline="") as f:
         return {
-            normaliziraj_naziv(red["naziv_tablica"]): normaliziraj_naziv(red["naziv_kontakt"])
+            normaliziraj_naziv(red["naziv"]): normaliziraj_naziv(red["zamjena"])
             for red in csv.DictReader(f)
-            if red.get("naziv_tablica") and red.get("naziv_kontakt")
+            if red.get("naziv") and red.get("zamjena")
         }
 
 
@@ -153,7 +181,7 @@ def _objekt(k):
 
 
 def spoji(retci, kontakti, iznimke):
-    """Retci snapshota + kontakti → lista ustanova, i popis nespojenih naziva."""
+    """Retci snimke + kontakti → lista ustanova, i popis nespojenih naziva."""
     po_kljucu = {}
     for k in kontakti:
         if not k.get("X") or not k.get("Y"):
@@ -199,7 +227,7 @@ def zadnji_snapshot():
     )
     if not snapshotovi:
         raise FileNotFoundError(
-            "nema nijednog snapshota — pokreni prvo: python3 scripts/prikupi.py"
+            "nema nijedne snimke — pokreni prvo: python3 scripts/prikupi.py"
         )
     return snapshotovi[-1]
 
@@ -208,7 +236,7 @@ def agregiraj_seriju(retci):
     """serija.csv → zbrojevi po datumu, ukupno / po četvrti / po vrsti.
 
     Datum koji nema nijedan redak za neku kategoriju ostaje odsutan, a ne nula:
-    snapshot iz 2025. ne pokriva privatne vrtiće, i prikaz to mora razlikovati
+    snimka iz 2025. ne pokriva privatne vrtiće, i prikaz to mora razlikovati
     od stvarne nule.
 
     Gradske četvrti se svode na zajednički ključ prije zbrajanja — vidi komentar
@@ -243,76 +271,19 @@ def agregiraj_seriju(retci):
     }
 
 
-def zapisi_provenijenciju(snapshotovi):
-    """data/README.md — bez ovoga skup podataka nije provjerljiv, samo tvrdnja."""
-    redovi = [
-        "# Skup podataka: slobodna mjesta u zagrebačkim vrtićima",
-        "",
-        "Licenca: **CC-BY 4.0**. Izvor podataka: **Grad Zagreb**.",
-        "",
-        "Podaci o slobodnim mjestima prikupljeni su sa stranice",
-        "<https://vrtici.zagreb.hr/slobodna-mjesta/187>, koja ih objavljuje mjesečno",
-        "i pritom **prepisuje prethodni mjesec**. Ovaj repozitorij čuva svaki snimak,",
-        "pa nastaje vremenska serija koja inače ne postoji.",
-        "",
-        "Kontakt podaci ustanova preuzimaju se s portala otvorenih podataka",
-        "Grada Zagreba (<https://data.zagreb.hr>), pod Otvorenom dozvolom.",
-        "",
-        "## Shema",
-        "",
-        "`" + ",".join(ZAGLAVLJE) + "`",
-        "",
-        "## Snapshotovi",
-        "",
-        "| Datum stanja | Redaka | Slobodnih mjesta | Pokriveno |",
-        "|---|---|---|---|",
-    ]
-    for s in snapshotovi:
-        redovi.append(
-            f"| {s['datum']} | {s['redaka']} | {s['mjesta']} | {', '.join(s['vrste'])} |"
-        )
-    redovi += [
-        "",
-        "## Ograničenja",
-        "",
-        "- Slobodna mjesta su na razini **matične ustanove**, ne pojedinog objekta.",
-        "- Snapshot iz 2025. ne pokriva privatne i vjerske vrtiće; onaj iz 2023. ne pokriva obrte dadilja.",
-        "- Gradska četvrt Brezovica ima ustanove, ali se ni u jednoj snimci slobodnih mjesta ne pojavljuje.",
-        "- Ista četvrt je u izvorima pisana različito; u izvedenim prikazima svodi se na jedan naziv.",
-        "- Podatak je mjesečni snimak, ne stanje uživo.",
-        "",
-        "Svaki snapshot proizveden je skriptom `scripts/prikupi.py` (odnosno",
-        "`scripts/povijest.py` za 2023. i 2025.), a prije zapisa provjereno je da se",
-        "zbroj redaka poklapa s kontrolnim brojkama koje izvor sam objavljuje.",
-    ]
-    (KORIJEN / "data" / "README.md").write_text("\n".join(redovi) + "\n", encoding="utf-8")
-
-
-def sazetak_snapshota():
-    sazeci = []
-    for put in sorted(SNAPSHOTI.glob("*.csv")):
-        if put.name == "serija.csv":
-            continue
-        with put.open(encoding="utf-8", newline="") as f:
-            retci = list(csv.DictReader(f))
-        sazeci.append(
-            {
-                "datum": put.stem,
-                "redaka": len(retci),
-                "mjesta": sum(int(r["slobodnih"]) for r in retci),
-                "vrste": sorted({r["vrsta"] for r in retci}),
-            }
-        )
-    return sazeci
-
-
 def main():
+    # serija.csv je izvedena datoteka: ako je mergean snimak koji je nastao prije
+    # nje, zapisana serija ga ne sadrži. Obnavlja se iz mape snimaka prije čitanja,
+    # da prikaz nikad ne ovisi o tome je li commitana kopija u koraku sa snimkama.
+    prikupi.obnovi_seriju()
+
     put = zadnji_snapshot()
     datum_stanja = date.fromisoformat(put.stem)
     with put.open(encoding="utf-8", newline="") as f:
         retci = list(csv.DictReader(f))
 
-    ustanove, nespojeni = spoji(retci, dohvati_kontakte(), ucitaj_iznimke())
+    iznimke = ucitaj_iznimke()
+    ustanove, nespojeni = spoji(retci, dohvati_kontakte(), iznimke)
 
     udio = 1 - len(nespojeni) / len(ustanove)
     print(f"spojeno {len(ustanove) - len(nespojeni)}/{len(ustanove)} ustanova ({udio:.0%})")
@@ -321,7 +292,7 @@ def main():
     if udio < PRAG_SPOJENOSTI:
         raise ValueError(
             f"spojeno samo {udio:.0%}, prag je {PRAG_SPOJENOSTI:.0%} — "
-            "provjeri normaliziraj_naziv() ili dopuni data/iznimke.csv"
+            "provjeri normaliziraj_naziv() ili dopuni scripts/iznimke.csv"
         )
 
     IZLAZ.mkdir(parents=True, exist_ok=True)
@@ -345,7 +316,7 @@ def main():
     (IZLAZ / "serija.json").write_text(
         json.dumps(serija, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"
     )
-    zapisi_provenijenciju(sazetak_snapshota())
+    provenijencija.zapisi(provenijencija.sazetak_snimaka())
     print(f"serija: {len(serija['datumi'])} snimaka; data/README.md osvježen")
 
     cetvrt_po_kljucu = {u["kljuc"]: u["cetvrt"] for u in ustanove}
@@ -354,13 +325,14 @@ def main():
         zahtjev = urllib.request.Request(url, headers={"User-Agent": "vrtici-zagreb/1.0"})
         with urllib.request.urlopen(zahtjev, timeout=60) as odgovor:
             dio = parse_ulaganja(json.load(odgovor), godina)
-        for u in dio:
-            u["postojeca"] = u["kljuc"] in cetvrt_po_kljucu
-            # samo za postojeće ustanove znamo četvrt (dolazi iz spojene tablice
-            # slobodnih mjesta) — za planirane objekte izvor nema taj podatak.
-            u["cetvrt"] = cetvrt_po_kljucu.get(u["kljuc"])
+        nespojena = pripoji_cetvrt(dio, cetvrt_po_kljucu, iznimke)
         print(f"ulaganja {godina}: {len(dio)} predškolskih, "
-              f"{sum(1 for u in dio if u['postojeca'])} spojeno s postojećom ustanovom")
+              f"{len(dio) - len(nespojena)} spojeno s ustanovom iz tablice")
+        # Bez praga: većina nespojenih su stvarno novi objekti na katastarskoj
+        # čestici, pa nizak udio nije kvar. Ali svaki nespojeni naziv mora biti
+        # vidljiv u logu, jer je jedini način da se uoči promašaj kao Mažuranić.
+        for naziv in sorted(set(nespojena)):
+            print(f"  nije spojeno s ustanovom iz tablice: {naziv}")
         svi.extend(dio)
     (IZLAZ / "ulaganja.json").write_text(
         json.dumps({"godine": sorted(ULAGANJA), "ulaganja": svi},
