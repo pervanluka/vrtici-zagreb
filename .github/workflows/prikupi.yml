@@ -17,8 +17,9 @@ jobs:
 
       - name: Pokreni kolektor
         id: kolektor
+        shell: bash
         run: |
-          python3 scripts/prikupi.py | tee izlaz.txt
+          python3 scripts/prikupi.py 2>&1 | tee izlaz.txt
           if grep -q "nema promjene" izlaz.txt; then
             echo "promjena=ne" >> "$GITHUB_OUTPUT"
           else
@@ -32,21 +33,24 @@ jobs:
         run: |
           set -euo pipefail
           DATUM=$(ls data/slobodna-mjesta/*.csv | grep -v serija | sort | tail -1 | xargs basename | sed 's/.csv//')
-          if [ -z "$DATUM" ]; then
-            echo "Greška: datum nije pronađen u datotekama" >&2
-            exit 1
-          fi
           GRANA="podaci/$DATUM"
+          if git ls-remote --exit-code --heads origin "$GRANA" >/dev/null 2>&1; then
+            echo "Grana $GRANA već postoji na remoteu — PR za to stanje je vjerojatno otvoren i nije mergean."
+            exit 0
+          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -b "$GRANA"
           git add data/slobodna-mjesta/
+          if git diff --cached --quiet; then
+            echo "Nema promjena za commit — kolektor nije zapisao nov snapshot." >&2
+            exit 1
+          fi
           git commit -m "podaci: slobodna mjesta na dan $DATUM"
           git push -u origin "$GRANA"
-          gh pr create \
-            --title "Slobodna mjesta — stanje $DATUM" \
-            --body "$(cat izlaz.txt)
-
-          Automatski dohvat s https://vrtici.zagreb.hr/slobodna-mjesta/187.
-          Kontrolni zbrojevi sa stranice provjereni su prije otvaranja ovog PR-a.
-          Pregledaj promjene i mergeaj."
+          TIJELO=$(printf '%s\n\n%s\n%s\n%s\n' \
+            "$(cat izlaz.txt)" \
+            "Automatski dohvat s https://vrtici.zagreb.hr/slobodna-mjesta/187." \
+            "Kontrolni zbrojevi sa stranice provjereni su prije otvaranja ovog PR-a." \
+            "Pregledaj promjene i mergeaj.")
+          gh pr create --title "Slobodna mjesta — stanje $DATUM" --body "$TIJELO"
