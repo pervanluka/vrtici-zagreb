@@ -21,6 +21,21 @@ class TestDatum(unittest.TestCase):
         dokument = "<p>Na dan 1. prosinca slobodno je 10 upisnih mjesta.</p>"
         self.assertEqual(parsiranje.parse_datum(dokument, date(2027, 1, 5)), date(2026, 12, 1))
 
+    def test_datum_nikad_nije_u_buducnosti(self):
+        # Grad preskoči mjesec, stranica ostane nepromijenjena: prosinačko stanje
+        # viđeno u veljači je i dalje prošlogodišnji prosinac, ne budući.
+        dokument = "<p>Na dan 1. prosinca slobodno je 10 upisnih mjesta.</p>"
+        self.assertEqual(parsiranje.parse_datum(dokument, date(2027, 2, 1)), date(2026, 12, 1))
+
+    def test_studeni_vidjen_u_sijecnju(self):
+        # stara pravila su ovdje davala 2027-11-01, godinu dana u budućnost
+        dokument = "<p>Na dan 1. studenog slobodno je 10 upisnih mjesta.</p>"
+        self.assertEqual(parsiranje.parse_datum(dokument, date(2027, 1, 5)), date(2026, 11, 1))
+
+    def test_isti_mjesec_ranijeg_dana_ostaje_u_tekucoj_godini(self):
+        dokument = "<p>Na dan 1. rujna slobodno je 10 upisnih mjesta.</p>"
+        self.assertEqual(parsiranje.parse_datum(dokument, date(2026, 9, 1)), date(2026, 9, 1))
+
     def test_bez_datuma_puca(self):
         with self.assertRaises(ValueError):
             parsiranje.parse_datum("<p>ništa</p>", date(2026, 9, 8))

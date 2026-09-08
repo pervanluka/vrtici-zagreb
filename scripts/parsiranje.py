@@ -50,16 +50,18 @@ def tekst(dokument):
 def parse_datum(dokument, danas):
     """'Na dan 1. rujna' → date(2026, 9, 1).
 
-    Stranica ne navodi godinu, pa se izvodi iz `danas`. Ako je u siječnju
-    prikazano prosinačko stanje, godina je prethodna.
+    Stranica ne navodi godinu, pa se uzima najskoriji (dan, mjesec) koji nije u
+    budućnosti. Time nepromijenjena stranica uvijek daje isti datum kao prošli
+    put — i onda kad Grad preskoči mjesec — pa kolektor takvo stanje prepozna
+    kao "nema promjene" umjesto da izmisli datum godinu dana unaprijed.
     """
     uzorak = r"Na dan (\d{1,2})\.\s*(" + "|".join(MJESECI) + r")"
     m = re.search(uzorak, tekst(dokument))
     if not m:
         raise ValueError("datum stanja nije pronađen na stranici")
     dan, mjesec = int(m.group(1)), MJESECI[m.group(2)]
-    godina = danas.year - 1 if (mjesec == 12 and danas.month == 1) else danas.year
-    return date(godina, mjesec, dan)
+    kandidat = date(danas.year, mjesec, dan)
+    return kandidat if kandidat <= danas else date(danas.year - 1, mjesec, dan)
 
 
 def parse_zbrojeve(dokument):
