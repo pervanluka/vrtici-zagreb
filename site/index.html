@@ -1,0 +1,112 @@
+<!-- site/index.html -->
+<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slobodna mjesta u zagrebačkim vrtićima</title>
+<link rel="stylesheet" href="vendor/leaflet.css">
+<link rel="stylesheet" href="stil.css">
+</head>
+<body>
+<header>
+  <h1>Slobodna mjesta u zagrebačkim vrtićima</h1>
+  <nav><a href="index.html">Karta</a><a href="lista.html">Lista</a><a href="trend.html">Trend</a><a href="podaci.html">Podaci</a></nav>
+  <p class="napomena" id="napomena"></p>
+</header>
+
+<div class="filtri">
+  <label>Gradska četvrt<select id="cetvrt"></select></label>
+  <label>Vrsta ustanove<select id="vrsta"></select></label>
+  <label>Dobna skupina<select id="dobna"></select></label>
+  <label>Uzrast<select id="uzrast"></select></label>
+  <label>Program<select id="program"></select></label>
+  <label>Pretraži<input id="tekst" type="search" placeholder="naziv ili adresa"></label>
+  <label>Samo sa slobodnim mjestima<input id="samo" type="checkbox" checked></label>
+</div>
+
+<div id="karta"></div>
+<p class="rezultat" id="rezultat"></p>
+
+<script src="vendor/leaflet.js"></script>
+<script src="app.js"></script>
+<script>
+(function () {
+  "use strict";
+  var karta = L.map("karta").setView([45.8150, 15.9819], 12);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(karta);
+
+  var sloj = L.layerGroup().addTo(karta);
+  var sve = [];
+  var polja = ["cetvrt", "vrsta", "dobna", "uzrast", "program", "tekst", "samo"];
+
+  function trenutniFiltri() {
+    return {
+      cetvrt: document.getElementById("cetvrt").value,
+      vrsta: document.getElementById("vrsta").value,
+      dobnaSkupina: document.getElementById("dobna").value,
+      uzrast: document.getElementById("uzrast").value,
+      program: document.getElementById("program").value,
+      tekst: document.getElementById("tekst").value.trim(),
+      samoSlobodna: document.getElementById("samo").checked
+    };
+  }
+
+  function opis(u) {
+    var redovi = u.mjesta.filter(function (m) { return m.slobodnih > 0; })
+      .map(function (m) {
+        return "<li>" + [m.dobna_skupina, m.uzrast, m.program].filter(Boolean).join(", ") +
+               ": <strong>" + m.slobodnih + "</strong></li>";
+      }).join("");
+    var kontakt = u.objekti.length
+      ? u.objekti.map(function (o) { return o.naziv + " — " + o.adresa; }).join("<br>")
+      : "adresa nije dostupna u otvorenim podacima";
+    return "<strong>" + u.naziv + "</strong><br>" + u.cetvrt + " · " + u.vrsta +
+           "<ul>" + (redovi || "<li>nema slobodnih mjesta</li>") + "</ul>" +
+           "<small>" + kontakt + "<br>" + VZ.oznakaRazine() + "</small>";
+  }
+
+  function crtaj() {
+    var vidljive = VZ.filtriraj(sve, trenutniFiltri());
+    sloj.clearLayers();
+    var naKarti = 0;
+    vidljive.forEach(function (u) {
+      u.objekti.forEach(function (o) {
+        naKarti++;
+        L.circleMarker([o.y, o.x], {
+          radius: 7,
+          color: u.slobodnih_prikaz > 0 ? "#1f7a3d" : "#9a9a9a",
+          fillOpacity: 0.85
+        }).bindPopup(opis(u)).addTo(sloj);
+      });
+    });
+    var bez = vidljive.length - vidljive.filter(function (u) { return u.objekti.length; }).length;
+    document.getElementById("rezultat").textContent =
+      vidljive.length + " ustanova, " + naKarti + " objekata na karti" +
+      (bez ? " (" + bez + " bez koordinata u otvorenim podacima)" : "");
+  }
+
+  VZ.ucitaj().then(function (d) {
+    sve = d.ustanove;
+    document.getElementById("napomena").textContent =
+      "Stanje na dan " + d.datum_stanja + ". " + VZ.oznakaRazine();
+    VZ.napuniOdabir(document.getElementById("cetvrt"), VZ.jedinstveno(sve, "cetvrt"), "sve četvrti");
+    VZ.napuniOdabir(document.getElementById("vrsta"), VZ.jedinstveno(sve, "vrsta"), "sve vrste");
+    var mjesta = sve.reduce(function (a, u) { return a.concat(u.mjesta); }, []);
+    VZ.napuniOdabir(document.getElementById("dobna"), VZ.jedinstveno(mjesta, "dobna_skupina"), "sve skupine");
+    VZ.napuniOdabir(document.getElementById("uzrast"), VZ.jedinstveno(mjesta, "uzrast"), "svi uzrasti");
+    VZ.napuniOdabir(document.getElementById("program"), VZ.jedinstveno(mjesta, "program"), "svi programi");
+    polja.forEach(function (id) {
+      document.getElementById(id).addEventListener("input", crtaj);
+    });
+    crtaj();
+  }).catch(function (e) {
+    document.getElementById("rezultat").textContent = "Greška pri učitavanju podataka: " + e.message;
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!-- site/lista.html -->
+<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lista ustanova — slobodna mjesta u zagrebačkim vrtićima</title>
+<link rel="stylesheet" href="stil.css">
+</head>
+<body>
+<header>
+  <h1>Lista ustanova</h1>
+  <nav><a href="index.html">Karta</a><a href="lista.html">Lista</a><a href="trend.html">Trend</a><a href="podaci.html">Podaci</a></nav>
+  <p class="napomena" id="napomena"></p>
+</header>
+
+<div class="filtri">
+  <label for="cetvrt">Gradska četvrt<select id="cetvrt"></select></label>
+  <label for="vrsta">Vrsta ustanove<select id="vrsta"></select></label>
+  <label for="dobna">Dobna skupina<select id="dobna"></select></label>
+  <label for="tekst">Pretraži<input id="tekst" type="search" placeholder="naziv ili adresa"></label>
+  <label for="samo">Samo sa slobodnim mjestima<input id="samo" type="checkbox" checked></label>
+</div>
+
+<p class="rezultat" id="rezultat" role="status" aria-live="polite"></p>
+
+<table>
+  <caption class="napomena" id="caption"></caption>
+  <thead>
+    <tr>
+      <th scope="col" data-polje="naziv" tabindex="0">Ustanova</th>
+      <th scope="col" data-polje="cetvrt" tabindex="0">Gradska četvrt</th>
+      <th scope="col" data-polje="vrsta" tabindex="0">Vrsta</th>
+      <th scope="col" data-polje="slobodnih_prikaz" tabindex="0">Slobodnih mjesta</th>
+    </tr>
+  </thead>
+  <tbody id="tijelo"></tbody>
+</table>
+
+<script src="app.js"></script>
+<script>
+(function () {
+  "use strict";
+  var sve = [], sortPolje = "naziv", sortSmjer = 1;
+
+  function trenutniFiltri() {
+    return {
+      cetvrt: document.getElementById("cetvrt").value,
+      vrsta: document.getElementById("vrsta").value,
+      dobnaSkupina: document.getElementById("dobna").value,
+      tekst: document.getElementById("tekst").value.trim(),
+      samoSlobodna: document.getElementById("samo").checked
+    };
+  }
+
+  function crtaj() {
+    var redovi = VZ.filtriraj(sve, trenutniFiltri()).sort(function (a, b) {
+      var x = a[sortPolje], y = b[sortPolje];
+      if (typeof x === "number") return (x - y) * sortSmjer;
+      return String(x).localeCompare(String(y), "hr") * sortSmjer;
+    });
+    var tijelo = document.getElementById("tijelo");
+    tijelo.innerHTML = "";
+    redovi.forEach(function (u) {
+      var tr = document.createElement("tr");
+      var adrese = u.objekti.map(function (o) { return o.adresa; }).join(", ");
+      [
+        u.naziv + (adrese ? " — " + adrese : ""),
+        u.cetvrt,
+        u.vrsta,
+        String(u.slobodnih_prikaz)
+      ].forEach(function (v, i) {
+        var td = document.createElement("td");
+        td.textContent = v;
+        if (i === 3) td.className = u.slobodnih_prikaz > 0 ? "ima" : "nema";
+        tr.appendChild(td);
+      });
+      tijelo.appendChild(tr);
+    });
+    document.getElementById("rezultat").textContent = redovi.length + " ustanova";
+  }
+
+  document.querySelectorAll("th[data-polje]").forEach(function (th) {
+    function prebaci() {
+      var polje = th.dataset.polje;
+      sortSmjer = polje === sortPolje ? -sortSmjer : 1;
+      sortPolje = polje;
+      crtaj();
+    }
+    th.addEventListener("click", prebaci);
+    th.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); prebaci(); }
+    });
+  });
+
+  VZ.ucitaj().then(function (d) {
+    sve = d.ustanove;
+    var poruka = "Stanje na dan " + d.datum_stanja + ". " + VZ.oznakaRazine();
+    document.getElementById("napomena").textContent = poruka;
+    document.getElementById("caption").textContent = poruka;
+    VZ.napuniOdabir(document.getElementById("cetvrt"), VZ.jedinstveno(sve, "cetvrt"), "sve četvrti");
+    VZ.napuniOdabir(document.getElementById("vrsta"), VZ.jedinstveno(sve, "vrsta"), "sve vrste");
+    var mjesta = sve.reduce(function (a, u) { return a.concat(u.mjesta); }, []);
+    VZ.napuniOdabir(document.getElementById("dobna"), VZ.jedinstveno(mjesta, "dobna_skupina"), "sve skupine");
+    ["cetvrt", "vrsta", "dobna", "tekst", "samo"].forEach(function (id) {
+      document.getElementById(id).addEventListener("input", crtaj);
+    });
+    crtaj();
+  }).catch(function (e) {
+    document.getElementById("rezultat").textContent = "Greška pri učitavanju podataka: " + e.message;
+  });
+})();
+</script>
+</body>
+</html>
