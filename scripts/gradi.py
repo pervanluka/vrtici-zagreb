@@ -70,7 +70,6 @@ def normaliziraj_naziv(naziv):
     k = re.sub(r"\s*-\s*(MATICNI OBJEKT|PO\b.*)$", "", k)
     # skupovi kapitalnih ulaganja koriste zarez umjesto crtice i ponekad
     # dopisuju adresu iza naziva: 'DV "Medo Brundo", PO Novi Retkovec', 'DV "Bajka", Humska 1'
-    k = re.sub(r"\s*,\s*PO\b.*$", "", k)
     k = re.sub(r"\s*,\s*.*$", "", k)
     k = re.sub(r"[^A-Z0-9 ]", " ", k)
     return " ".join(k.split())
@@ -82,8 +81,18 @@ def kljuc_cetvrti(cetvrt):
 
 
 def parse_ulaganja(geojson, godina):
-    """GeoJSON kapitalnih ulaganja → samo predškolske ustanove, u obliku za kartu."""
-    polje = POLJE_IZNOSA.get(godina)
+    """GeoJSON kapitalnih ulaganja → samo predškolske ustanove, u obliku za kartu.
+
+    Naziv polja s iznosom nije isti obrazac kroz godine (vidi POLJE_IZNOSA) — radije
+    pasti na nepoznatoj godini nego tiho upisati iznos: None za skup koji stvarno ima
+    taj podatak, samo pod drugim imenom polja.
+    """
+    if godina not in POLJE_IZNOSA:
+        raise ValueError(
+            f"nema poznatog polja s iznosom za godinu {godina} — provjeri stvarni "
+            "naziv polja u GeoJSON-u i dopuni POLJE_IZNOSA"
+        )
+    polje = POLJE_IZNOSA[godina]
     ulaganja = []
     for f in geojson.get("features", []):
         sv = f.get("properties") or {}
@@ -91,7 +100,7 @@ def parse_ulaganja(geojson, godina):
             continue
         geom = f.get("geometry") or {}
         koord = geom.get("coordinates") or [None, None]
-        sirovi_iznos = sv.get(polje) if polje else None
+        sirovi_iznos = sv.get(polje)
         iznos = str(sirovi_iznos).strip() if sirovi_iznos is not None else ""
         ulaganja.append(
             {

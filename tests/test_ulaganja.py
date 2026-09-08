@@ -58,3 +58,21 @@ class TestParseUlaganja(unittest.TestCase):
     def test_godina_se_biljezi(self):
         u = gradi.parse_ulaganja(GEOJSON, 2024)
         self.assertTrue(all(x["godina"] == 2024 for x in u))
+
+    def test_2023_cita_plan2023_polje(self):
+        geojson_2023 = {
+            "type": "FeatureCollection",
+            "features": [
+                {"type": "Feature",
+                 "geometry": {"type": "Point", "coordinates": [15.9, 45.8]},
+                 "properties": {"Vrsta_objekta": "PREDŠKOLSKE USTANOVE", "naziv": "DV Test",
+                                "Adresa": "", "Opis_radova": "izrada projektne dokumentacije",
+                                "Plan2023": 13000}},
+            ],
+        }
+        u = gradi.parse_ulaganja(geojson_2023, 2023)
+        self.assertEqual(u[0]["iznos"], 13000)
+
+    def test_nepoznata_godina_puca_umjesto_null_iznosa(self):
+        with self.assertRaises(Exception):
+            gradi.parse_ulaganja(GEOJSON, 2025)

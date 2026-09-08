@@ -175,13 +175,19 @@
     var uOvojCetvrti = ulaganja
       .filter(function (u) { return u.cetvrt === cetvrt; })
       .sort(function (a, b) { return b.godina - a.godina; });
+    var nepripisano = ulaganja.filter(function (u) { return u.cetvrt === null; }).length;
+    document.getElementById("napomenaCetvrt").textContent =
+      uOvojCetvrti.length + " ulaganja prikazano za ovu četvrt. " + nepripisano +
+      " planiranih objekata u cijelom gradu nije pripisano nijednoj četvrti jer ustanova " +
+      "još ne postoji. Kretanje slobodnih mjesta i iznos ulaganja stoje jedno uz drugo " +
+      "radi konteksta — ne pokazuju uzročnost.";
+
     var kontejner = document.getElementById("ulaganjaCetvrt");
     kontejner.innerHTML = "";
     if (!uOvojCetvrti.length) {
       var p = document.createElement("p");
       p.className = "napomena";
-      p.textContent = "Nema poznatih ulaganja u ovoj četvrti u postojeće ustanove " +
-        "(planirani objekti u drugim četvrtima nisu prikazani ovdje jer im četvrt nije poznata).";
+      p.textContent = "Nema ulaganja u postojeće ustanove u ovoj četvrti.";
       kontejner.appendChild(p);
       return;
     }
