@@ -27,11 +27,14 @@
 </header>
 
 <p class="upozorenje">
-  <strong>Ove tri snimke nisu izravno usporedive.</strong> Svaka pokriva drugačiji skup vrsta ustanova
-  i drugačiji mjesec u godini: snimka iz ožujka 2023. ne uključuje obrte dadilja, ona iz siječnja 2025.
-  ne uključuje privatne i vjerske vrtiće, a tek snimka iz rujna 2026. pokriva sve tri vrste. Rast ukupne
-  linije zato dijelom dolazi od toga što je obuhvat postao širi, ne samo od toga što ima više slobodnih
-  mjesta. Za usporedbu istog tipa ustanove kroz vrijeme koristite prikaz "po vrsti ustanove".
+  <strong>Ove tri snimke nisu izravno usporedive niti u jednom prikazu.</strong> Svaka pokriva drugačiji
+  skup vrsta ustanova i snimljena je u drugom mjesecu u godini: snimka iz ožujka 2023. ne uključuje obrte
+  dadilja, ona iz siječnja 2025. ne uključuje privatne i vjerske vrtiće, a tek snimka iz rujna 2026. pokriva
+  sve tri vrste. To utječe i na ukupnu liniju i na prikaz po gradskoj četvrti — rast u pojedinoj četvrti
+  može dijelom dolaziti od toga što ranija snimka jednostavno nije mjerila neku vrstu ustanove u toj
+  četvrti, a ne od stvarnog povećanja broja mjesta. Jedina vrsta ustanove izmjerena u sve tri snimke je
+  <strong>Gradski DV</strong> — to je najpouzdanija linija za usporedbu kroz vrijeme, no ni ona ne mijenja
+  činjenicu da su snimke iz različitih mjeseci u godini.
 </p>
 
 <div class="filtri">
@@ -42,6 +45,8 @@
   </select></label>
   <label for="kategorija">Kategorija<select id="kategorija" disabled></select></label>
 </div>
+
+<p id="napomenaPogleda" class="napomena" style="margin: 0 16px;"></p>
 
 <div class="graf"><svg id="graf" viewBox="0 0 780 260" role="img" aria-labelledby="opis"></svg>
   <p id="opis" class="napomena"></p>
@@ -93,10 +98,43 @@
       '<text class="oznaka" x="4" y="' + (T + visina) + '">0</text>' +
       '<path class="crta" d="' + d.trim() + '"/>' + tocke + oznake;
 
-    var nedostaje = vrijednosti.filter(function (v) { return v === null; }).length;
+    var nedostajuciDatumi = datumi.filter(function (dd, i) { return vrijednosti[i] === null; });
     document.getElementById("opis").textContent =
-      "Slobodna mjesta — " + izbor.naslov + ". Snimaka: " + poznate.length +
-      (nedostaje ? ", bez podatka: " + nedostaje : "") + ".";
+      "Slobodna mjesta — " + izbor.naslov + ". Snimaka s podatkom: " + poznate.length + "/" + datumi.length +
+      (nedostajuciDatumi.length ? ". Bez podatka za: " + nedostajuciDatumi.join(", ") + "." : ".");
+
+    document.getElementById("napomenaPogleda").textContent = napomenaZaPogled(izbor);
+  }
+
+  // Objašnjava, za trenutno odabrani prikaz, na koji način i on nosi isti
+  // problem neusklađenog obuhvata iz upozorenja iznad — nijedan prikaz nije
+  // "siguran" izuzetak.
+  function napomenaZaPogled(izbor) {
+    var pogled = document.getElementById("pogled").value;
+    if (pogled === "ukupno") {
+      return "Ova linija zbraja sve vrste ustanova zajedno — dio njenog rasta dolazi od toga što " +
+             "novije snimke pokrivaju više vrsta ustanova, ne samo od stvarne promjene broja mjesta.";
+    }
+    if (pogled === "po_cetvrti") {
+      return "Broj za ovu četvrt zbraja sve vrste ustanova u njoj — dio promjene između snimaka može " +
+             "dolaziti od toga što ranije snimke nisu mjerile sve vrste u toj četvrti (obrti dadilja " +
+             "izostaju iz snimke od ožujka 2023., privatni i vjerski vrtići iz snimke od siječnja 2025.), " +
+             "ne samo od stvarne promjene broja mjesta.";
+    }
+    // po_vrsti
+    var kat = document.getElementById("kategorija").value;
+    if (kat === "Gradski DV") {
+      return "Gradski DV je jedina vrsta ustanove izmjerena u sve tri snimke — ovo je linija koju je " +
+             "najsigurnije uspoređivati kroz vrijeme.";
+    }
+    var nedostaje = serija.datumi.filter(function (dt) {
+      return !Object.prototype.hasOwnProperty.call(serija.po_vrsti[kat] || {}, dt);
+    });
+    if (nedostaje.length) {
+      return "\"" + kat + "\" nema podatka za snimku od " + nedostaje.join(", ") + " — ta snimka " +
+             "jednostavno nije obuhvatila ovu vrstu ustanove, zato točka na grafu za taj datum nedostaje.";
+    }
+    return "";
   }
 
   function osvjeziKategorije() {
