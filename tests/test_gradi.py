@@ -122,5 +122,59 @@ class TestSpajanje(unittest.TestCase):
                 self.assertIsInstance(o["y"], float)
 
 
+SERIJA = [
+    {"datum_stanja": "2025-01-01", "naziv": "DV A", "vrsta": "Gradski DV",
+     "cetvrt": "Trnje", "dobna_skupina": "Jaslice", "uzrast": "1 do 2 godine",
+     "program": "Redoviti", "slobodnih": "2"},
+    {"datum_stanja": "2025-01-01", "naziv": "DV B", "vrsta": "Obrt dadilja",
+     "cetvrt": "Trnje", "dobna_skupina": "", "uzrast": "", "program": "", "slobodnih": "1"},
+    {"datum_stanja": "2026-09-01", "naziv": "DV A", "vrsta": "Gradski DV",
+     "cetvrt": "Trnje", "dobna_skupina": "Jaslice", "uzrast": "1 do 2 godine",
+     "program": "Redoviti", "slobodnih": "5"},
+]
+
+
+class TestSerija(unittest.TestCase):
+    def test_datumi_su_sortirani(self):
+        s = gradi.agregiraj_seriju(SERIJA)
+        self.assertEqual(s["datumi"], ["2025-01-01", "2026-09-01"])
+
+    def test_ukupno_po_datumu(self):
+        s = gradi.agregiraj_seriju(SERIJA)
+        self.assertEqual(s["ukupno"], {"2025-01-01": 3, "2026-09-01": 5})
+
+    def test_po_cetvrti(self):
+        s = gradi.agregiraj_seriju(SERIJA)
+        self.assertEqual(s["po_cetvrti"]["Trnje"]["2026-09-01"], 5)
+
+    def test_razlicito_pisanje_cetvrti_se_spaja(self):
+        # izmjereno na stvarnim podacima: 36 nizova za 16 četvrti
+        retci = SERIJA + [
+            {"datum_stanja": "2023-03-01", "naziv": "DV C", "vrsta": "Gradski DV",
+             "cetvrt": "TRNJE", "dobna_skupina": "Jaslice", "uzrast": "1 do 2 godine",
+             "program": "Redoviti", "slobodnih": "4"},
+        ]
+        s = gradi.agregiraj_seriju(retci)
+        self.assertEqual(len(s["po_cetvrti"]), 1)
+        trnje = s["po_cetvrti"]["Trnje"]
+        self.assertEqual(trnje["2023-03-01"], 4)
+        self.assertEqual(trnje["2026-09-01"], 5)
+
+    def test_naziv_cetvrti_dolazi_iz_najnovije_snimke(self):
+        retci = SERIJA + [
+            {"datum_stanja": "2023-03-01", "naziv": "DV C", "vrsta": "Gradski DV",
+             "cetvrt": "TRNJE", "dobna_skupina": "Jaslice", "uzrast": "1 do 2 godine",
+             "program": "Redoviti", "slobodnih": "4"},
+        ]
+        s = gradi.agregiraj_seriju(retci)
+        self.assertIn("Trnje", s["po_cetvrti"])
+        self.assertNotIn("TRNJE", s["po_cetvrti"])
+
+    def test_po_vrsti_izostavlja_datum_bez_podatka(self):
+        # 2025. je snimljen bez privatnih vrtića; prikaz mora moći reći "nema podatka"
+        s = gradi.agregiraj_seriju(SERIJA)
+        self.assertEqual(s["po_vrsti"]["Obrt dadilja"].get("2026-09-01"), None)
+
+
 if __name__ == "__main__":
     unittest.main()

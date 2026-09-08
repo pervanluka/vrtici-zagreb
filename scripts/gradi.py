@@ -13,10 +13,15 @@ import urllib.request
 from datetime import date, datetime, timezone
 from pathlib import Path
 
+import parsiranje
+
 KORIJEN = Path(__file__).resolve().parent.parent
 SNAPSHOTI = KORIJEN / "data" / "slobodna-mjesta"
 IZNIMKE = KORIJEN / "data" / "iznimke.csv"
 IZLAZ = KORIJEN / "site" / "data"
+SERIJA = KORIJEN / "data" / "slobodna-mjesta" / "serija.csv"
+# ista kanonska shema kao u prikupi.py — jedan izvor istine
+ZAGLAVLJE = ["datum_stanja"] + parsiranje.STUPCI
 
 KONTAKT_SKUPOVI = {
     "gradski": (
@@ -144,6 +149,108 @@ def zadnji_snapshot():
     return snapshotovi[-1]
 
 
+def agregiraj_seriju(retci):
+    """serija.csv → zbrojevi po datumu, ukupno / po četvrti / po vrsti.
+
+    Datum koji nema nijedan redak za neku kategoriju ostaje odsutan, a ne nula:
+    snapshot iz 2025. ne pokriva privatne vrtiće, i prikaz to mora razlikovati
+    od stvarne nule.
+
+    Gradske četvrti se svode na zajednički ključ prije zbrajanja — vidi komentar
+    u tijelu funkcije.
+    """
+    ukupno, po_cetvrti, po_vrsti, datumi = {}, {}, {}, set()
+
+    # Ista gradska četvrt piše se različito u različitim snimkama: izmjereno,
+    # 36 različitih nizova za 16 stvarnih četvrti ("DONJI GRAD" / "Donji grad",
+    # crtica vs. n-crtica). Bez svođenja na ključ trend po četvrti bi prikazao
+    # dvije-tri nepovezane krivulje po četvrti umjesto jedne. Naziv za prikaz
+    # uzima se iz najnovije snimke, jer to je pisanje koje korisnik vidi drugdje.
+    naziv_cetvrti = {}
+    for red in sorted(retci, key=lambda r: r["datum_stanja"]):
+        naziv_cetvrti[kljuc_cetvrti(red["cetvrt"])] = red["cetvrt"]
+
+    for red in retci:
+        d = red["datum_stanja"]
+        n = int(red["slobodnih"])
+        cetvrt = naziv_cetvrti[kljuc_cetvrti(red["cetvrt"])]
+        datumi.add(d)
+        ukupno[d] = ukupno.get(d, 0) + n
+        po_cetvrti.setdefault(cetvrt, {})
+        po_cetvrti[cetvrt][d] = po_cetvrti[cetvrt].get(d, 0) + n
+        po_vrsti.setdefault(red["vrsta"], {})
+        po_vrsti[red["vrsta"]][d] = po_vrsti[red["vrsta"]].get(d, 0) + n
+    return {
+        "datumi": sorted(datumi),
+        "ukupno": ukupno,
+        "po_cetvrti": po_cetvrti,
+        "po_vrsti": po_vrsti,
+    }
+
+
+def zapisi_provenijenciju(snapshotovi):
+    """data/README.md — bez ovoga skup podataka nije provjerljiv, samo tvrdnja."""
+    redovi = [
+        "# Skup podataka: slobodna mjesta u zagrebačkim vrtićima",
+        "",
+        "Licenca: **CC-BY 4.0**. Izvor podataka: **Grad Zagreb**.",
+        "",
+        "Podaci o slobodnim mjestima prikupljeni su sa stranice",
+        "<https://vrtici.zagreb.hr/slobodna-mjesta/187>, koja ih objavljuje mjesečno",
+        "i pritom **prepisuje prethodni mjesec**. Ovaj repozitorij čuva svaki snimak,",
+        "pa nastaje vremenska serija koja inače ne postoji.",
+        "",
+        "Kontakt podaci ustanova preuzimaju se s portala otvorenih podataka",
+        "Grada Zagreba (<https://data.zagreb.hr>), pod Otvorenom dozvolom.",
+        "",
+        "## Shema",
+        "",
+        "`" + ",".join(ZAGLAVLJE) + "`",
+        "",
+        "## Snapshotovi",
+        "",
+        "| Datum stanja | Redaka | Slobodnih mjesta | Pokriveno |",
+        "|---|---|---|---|",
+    ]
+    for s in snapshotovi:
+        redovi.append(
+            f"| {s['datum']} | {s['redaka']} | {s['mjesta']} | {', '.join(s['vrste'])} |"
+        )
+    redovi += [
+        "",
+        "## Ograničenja",
+        "",
+        "- Slobodna mjesta su na razini **matične ustanove**, ne pojedinog objekta.",
+        "- Snapshot iz 2025. ne pokriva privatne i vjerske vrtiće; onaj iz 2023. ne pokriva obrte dadilja.",
+        "- Gradska četvrt Brezovica ima ustanove, ali se ni u jednoj snimci slobodnih mjesta ne pojavljuje.",
+        "- Ista četvrt je u izvorima pisana različito; u izvedenim prikazima svodi se na jedan naziv.",
+        "- Podatak je mjesečni snimak, ne stanje uživo.",
+        "",
+        "Svaki snapshot proizveden je skriptom `scripts/prikupi.py` (odnosno",
+        "`scripts/povijest.py` za 2023. i 2025.), a prije zapisa provjereno je da se",
+        "zbroj redaka poklapa s kontrolnim brojkama koje izvor sam objavljuje.",
+    ]
+    (KORIJEN / "data" / "README.md").write_text("\n".join(redovi) + "\n", encoding="utf-8")
+
+
+def sazetak_snapshota():
+    sazeci = []
+    for put in sorted(SNAPSHOTI.glob("*.csv")):
+        if put.name == "serija.csv":
+            continue
+        with put.open(encoding="utf-8", newline="") as f:
+            retci = list(csv.DictReader(f))
+        sazeci.append(
+            {
+                "datum": put.stem,
+                "redaka": len(retci),
+                "mjesta": sum(int(r["slobodnih"]) for r in retci),
+                "vrste": sorted({r["vrsta"] for r in retci}),
+            }
+        )
+    return sazeci
+
+
 def main():
     put = zadnji_snapshot()
     datum_stanja = date.fromisoformat(put.stem)
@@ -177,6 +284,14 @@ def main():
         encoding="utf-8",
     )
     print(f"zapisano → {(IZLAZ / 'ustanove.json').relative_to(KORIJEN)}")
+
+    with SERIJA.open(encoding="utf-8", newline="") as f:
+        serija = agregiraj_seriju(list(csv.DictReader(f)))
+    (IZLAZ / "serija.json").write_text(
+        json.dumps(serija, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"
+    )
+    zapisi_provenijenciju(sazetak_snapshota())
+    print(f"serija: {len(serija['datumi'])} snimaka; data/README.md osvježen")
     return 0
 
 

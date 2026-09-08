@@ -1,0 +1,59 @@
+<!-- site/podaci.html -->
+<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Podaci — slobodna mjesta u zagrebačkim vrtićima</title>
+<link rel="stylesheet" href="stil.css">
+<style>main { padding: 16px; max-width: 780px; } code { background: #f3f3f3; padding: 1px 4px; }</style>
+</head>
+<body>
+<header>
+  <h1>Podaci</h1>
+  <nav><a href="index.html">Karta</a><a href="lista.html">Lista</a><a href="trend.html">Trend</a><a href="podaci.html">Podaci</a></nav>
+</header>
+<main>
+  <p>Svi podaci koje ova stranica prikazuje slobodno su dostupni za preuzimanje i ponovnu
+     upotrebu pod licencom <strong>CC-BY 4.0</strong>, uz navođenje Grada Zagreba kao izvora.</p>
+
+  <h2>Preuzimanje</h2>
+  <ul id="preuzimanja">
+    <li><a href="https://github.com/pervanluka/vrtici-zagreb/tree/main/data/slobodna-mjesta">Svi snapshotovi (CSV)</a></li>
+    <li><a href="https://github.com/pervanluka/vrtici-zagreb/blob/main/data/slobodna-mjesta/serija.csv">Vremenska serija (CSV)</a></li>
+    <li><a href="data/ustanove.json">Ustanove sa slobodnim mjestima (JSON)</a></li>
+    <li><a href="data/serija.json">Agregirana serija (JSON)</a></li>
+  </ul>
+
+  <h2>Shema</h2>
+  <p><code>datum_stanja,naziv,vrsta,cetvrt,dobna_skupina,uzrast,program,slobodnih</code></p>
+
+  <h2>Odakle podaci dolaze</h2>
+  <p>Grad Zagreb objavljuje broj slobodnih mjesta na
+     <a href="https://vrtici.zagreb.hr/slobodna-mjesta/187">vrtici.zagreb.hr</a>, mjesečno,
+     i pritom prepisuje prethodni mjesec — povijest se ne čuva. Na portalu otvorenih podataka
+     postoje dva skupa o slobodnim mjestima, oba zamrznuta (stanja 1.3.2023. i 1.1.2025.).</p>
+  <p>Ovaj projekt svaki mjesec sprema novi snimak i objavljuje ga kao otvoreni podatak, pa
+     nastaje vremenska serija koja inače ne postoji. Prikupljanje je automatizirano, ali
+     <strong>svaka objava prolazi ljudsku provjeru</strong> prije nego uđe u skup.</p>
+  <p>Kontakt podaci i koordinate ustanova preuzimaju se s
+     <a href="https://data.zagreb.hr">data.zagreb.hr</a> pod Otvorenom dozvolom.</p>
+
+  <h2>Ograničenja</h2>
+  <ul>
+    <li>Slobodna mjesta su na razini <strong>matične ustanove</strong>, ne pojedinog objekta.</li>
+    <li>Podatak je mjesečni snimak, ne stanje uživo. Datum stanja naveden je uz svaki prikaz.</li>
+    <li>Snapshot iz 2025. ne pokriva privatne i vjerske vrtiće; onaj iz 2023. ne pokriva obrte dadilja.</li>
+  </ul>
+
+  <h2>Kako provjeriti</h2>
+  <p>Cijeli postupak je otvoren kod pod MIT licencom. Skup se može ponovno proizvesti:</p>
+  <pre><code>git clone https://github.com/pervanluka/vrtici-zagreb
+cd vrtici-zagreb
+python3 scripts/prikupi.py
+python3 scripts/gradi.py</code></pre>
+  <p>Prije zapisa svakog snimka skripta usporedi zbroj redaka s kontrolnim brojkama koje
+     izvor sam objavljuje. Ako se ne poklapaju, snimak se ne objavljuje.</p>
+</main>
+</body>
+</html>

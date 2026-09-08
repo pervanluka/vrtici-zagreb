@@ -1,0 +1,135 @@
+<!-- site/trend.html -->
+<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trend — slobodna mjesta u zagrebačkim vrtićima</title>
+<link rel="stylesheet" href="stil.css">
+<style>
+  .graf { padding: 16px; }
+  svg { width: 100%; max-width: 780px; height: 260px; border: 1px solid var(--rub); border-radius: 4px; }
+  .os { stroke: #ccc; stroke-width: 1; }
+  .crta { fill: none; stroke: #1f7a3d; stroke-width: 2.5; }
+  .tocka { fill: #1f7a3d; }
+  .oznaka { font-size: 11px; fill: #5c5c5c; }
+  .upozorenje {
+    margin: 0 16px; padding: 10px 12px; border: 1px solid #e0b23c; background: #fdf6e3;
+    border-radius: 4px; font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Kretanje slobodnih mjesta</h1>
+  <nav><a href="index.html">Karta</a><a href="lista.html">Lista</a><a href="trend.html">Trend</a><a href="podaci.html">Podaci</a></nav>
+  <p class="napomena">Svaka točka je jedan mjesečni snimak. Grad objavljuje samo trenutno stanje — ovu seriju čuva ovaj projekt.</p>
+</header>
+
+<p class="upozorenje">
+  <strong>Ove tri snimke nisu izravno usporedive.</strong> Svaka pokriva drugačiji skup vrsta ustanova
+  i drugačiji mjesec u godini: snimka iz ožujka 2023. ne uključuje obrte dadilja, ona iz siječnja 2025.
+  ne uključuje privatne i vjerske vrtiće, a tek snimka iz rujna 2026. pokriva sve tri vrste. Rast ukupne
+  linije zato dijelom dolazi od toga što je obuhvat postao širi, ne samo od toga što ima više slobodnih
+  mjesta. Za usporedbu istog tipa ustanove kroz vrijeme koristite prikaz "po vrsti ustanove".
+</p>
+
+<div class="filtri">
+  <label for="pogled">Prikaži<select id="pogled">
+    <option value="ukupno">ukupno</option>
+    <option value="po_cetvrti">po gradskoj četvrti</option>
+    <option value="po_vrsti">po vrsti ustanove</option>
+  </select></label>
+  <label for="kategorija">Kategorija<select id="kategorija" disabled></select></label>
+</div>
+
+<div class="graf"><svg id="graf" viewBox="0 0 780 260" role="img" aria-labelledby="opis"></svg>
+  <p id="opis" class="napomena"></p>
+</div>
+
+<script src="app.js"></script>
+<script>
+(function () {
+  "use strict";
+  var serija = null;
+
+  function nizVrijednosti() {
+    var pogled = document.getElementById("pogled").value;
+    if (pogled === "ukupno") return { naslov: "svi vrtići", tocke: serija.ukupno };
+    var kat = document.getElementById("kategorija").value;
+    return { naslov: kat, tocke: (serija[pogled][kat] || {}) };
+  }
+
+  function crtaj() {
+    var izbor = nizVrijednosti();
+    var datumi = serija.datumi;
+    var vrijednosti = datumi.map(function (d) {
+      return Object.prototype.hasOwnProperty.call(izbor.tocke, d) ? izbor.tocke[d] : null;
+    });
+    var poznate = vrijednosti.filter(function (v) { return v !== null; });
+    var max = Math.max.apply(null, poznate.concat([1]));
+    var L = 48, R = 16, T = 16, B = 40, W = 780, H = 260;
+    var sirina = W - L - R, visina = H - T - B;
+
+    function x(i) { return datumi.length < 2 ? L + sirina / 2 : L + (sirina * i) / (datumi.length - 1); }
+    function y(v) { return T + visina - (visina * v) / max; }
+
+    var d = "", tocke = "", oznake = "";
+    var zapoceto = false;
+    vrijednosti.forEach(function (v, i) {
+      if (v === null) { zapoceto = false; return; }
+      d += (zapoceto ? " L" : " M") + x(i).toFixed(1) + "," + y(v).toFixed(1);
+      zapoceto = true;
+      tocke += '<circle class="tocka" cx="' + x(i).toFixed(1) + '" cy="' + y(v).toFixed(1) + '" r="4"><title>' +
+               datumi[i] + ": " + v + "</title></circle>";
+      oznake += '<text class="oznaka" x="' + x(i).toFixed(1) + '" y="' + (H - 20) +
+                '" text-anchor="middle">' + datumi[i].slice(0, 7) + "</text>";
+    });
+
+    document.getElementById("graf").innerHTML =
+      '<line class="os" x1="' + L + '" y1="' + (T + visina) + '" x2="' + (W - R) + '" y2="' + (T + visina) + '"/>' +
+      '<line class="os" x1="' + L + '" y1="' + T + '" x2="' + L + '" y2="' + (T + visina) + '"/>' +
+      '<text class="oznaka" x="4" y="' + (T + 10) + '">' + max + "</text>" +
+      '<text class="oznaka" x="4" y="' + (T + visina) + '">0</text>' +
+      '<path class="crta" d="' + d.trim() + '"/>' + tocke + oznake;
+
+    var nedostaje = vrijednosti.filter(function (v) { return v === null; }).length;
+    document.getElementById("opis").textContent =
+      "Slobodna mjesta — " + izbor.naslov + ". Snimaka: " + poznate.length +
+      (nedostaje ? ", bez podatka: " + nedostaje : "") + ".";
+  }
+
+  function osvjeziKategorije() {
+    var pogled = document.getElementById("pogled").value;
+    var odabir = document.getElementById("kategorija");
+    if (pogled === "ukupno") {
+      odabir.innerHTML = "";
+      odabir.disabled = true;
+    } else {
+      odabir.disabled = false;
+      var kljucevi = Object.keys(serija[pogled]).sort(function (a, b) { return a.localeCompare(b, "hr"); });
+      odabir.innerHTML = "";
+      kljucevi.forEach(function (k) {
+        var o = document.createElement("option");
+        o.value = k; o.textContent = k;
+        odabir.appendChild(o);
+      });
+    }
+    crtaj();
+  }
+
+  fetch("data/serija.json")
+    .then(function (o) { return o.json(); })
+    .then(function (s) {
+      serija = s;
+      document.getElementById("pogled").addEventListener("change", osvjeziKategorije);
+      document.getElementById("kategorija").addEventListener("change", crtaj);
+      osvjeziKategorije();
+    })
+    .catch(function (e) {
+      document.getElementById("opis").textContent = "Greška pri učitavanju serije: " + e.message;
+    });
+})();
+</script>
+</body>
+</html>
