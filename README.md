@@ -14,10 +14,13 @@ Potreban je samo Python 3.11+. Nema vanjskih ovisnosti.
 
 ```bash
 python3 scripts/prikupi.py    # dohvati novi snimak (ako ga ima)
-python3 scripts/povijest.py   # jednokratno: snapshotovi 2023. i 2025.
 python3 scripts/gradi.py      # spoji podatke i generiraj site/data/
 python3 -m http.server 8000 --directory site
 ```
+
+Snapshotovi iz 2023. i 2025. su već uključeni (vidi `data/slobodna-mjesta/`).
+Ako je trebate ponovno dohvatiti, pokrenut `python3 scripts/povijest.py` — to
+je jednokratni korak, već izvršen prije prvoga committa.
 
 ## Testovi
 
@@ -38,5 +41,6 @@ python3 -m unittest discover -s tests -v
 
 ## Licence
 
-Kod: MIT. Podaci: CC-BY 4.0, izvor Grad Zagreb. Vidi `data/README.md` za
+Kod: MIT (Luka Pervan). Podaci: CC-BY 4.0, izvor Grad Zagreb. Treće strane
+(`site/vendor/`): BSD-2-Clause (Leaflet). Vidi `data/README.md` za
 provenijenciju svakog snimka.
