@@ -96,7 +96,7 @@ def zapisi(snimke):
         "ih preskače da se mjesta ne bi brojala dvaput. Njihovi su zbrojevi provjereni ručnim",
         "prebrojavanjem prema tim zbirnim retcima izvora: 2023-03-01 daje 51 (gradski) + 32",
         "(privatni i vjerski) = 83 mjesta, a 2025-01-01 daje 174 (gradski) + 13 (dadilje) =",
-        "187 mjesta. Oba skupa su zamrznuta i više se ne mijenjaju.",
+        "187 mjesta. Oba su skupa zamrznuta i više se ne mijenjaju.",
     ]
     (KORIJEN / "data" / "README.md").write_text("\n".join(redovi) + "\n", encoding="utf-8")
 
