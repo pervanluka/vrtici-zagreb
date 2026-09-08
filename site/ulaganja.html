@@ -94,7 +94,7 @@
       });
       tijelo.appendChild(tr);
     });
-    document.getElementById("rezultatUlaganja").textContent = redovi.length + " ulaganja";
+    document.getElementById("rezultatUlaganja").textContent = "Prikazano ulaganja: " + redovi.length;
     azurirajZaglavlja();
   }
 
@@ -176,11 +176,14 @@
       .filter(function (u) { return u.cetvrt === cetvrt; })
       .sort(function (a, b) { return b.godina - a.godina; });
     var nepripisano = ulaganja.filter(function (u) { return u.cetvrt === null; }).length;
+    // Brojevi stoje kao oznaka: vrijednost, ne slijepljeni s imenicom — hrvatski
+    // glagolski pridjev i imenica se drugačije slažu za 1, za 2-4 i za 0/5+,
+    // a ovaj oblik je gramatički ispravan za bilo koji broj bez grananja po broju.
     document.getElementById("napomenaCetvrt").textContent =
-      uOvojCetvrti.length + " ulaganja prikazano za ovu četvrt. " + nepripisano +
-      " planiranih objekata u cijelom gradu nije pripisano nijednoj četvrti jer ustanova " +
-      "još ne postoji. Kretanje slobodnih mjesta i iznos ulaganja stoje jedno uz drugo " +
-      "radi konteksta — ne pokazuju uzročnost.";
+      "Ulaganja u ovoj četvrti: " + uOvojCetvrti.length + ". " +
+      "Planiranih objekata bez pripisane četvrti (cijeli grad): " + nepripisano + ". " +
+      "Kretanje slobodnih mjesta i iznos ulaganja stoje jedno uz drugo radi konteksta " +
+      "— ne pokazuju uzročnost.";
 
     var kontejner = document.getElementById("ulaganjaCetvrt");
     kontejner.innerHTML = "";
