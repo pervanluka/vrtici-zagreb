@@ -1,0 +1,895 @@
+datum_stanja,naziv,vrsta,cetvrt,dobna_skupina,uzrast,program,slobodnih
+2025-01-01,DV Budućnost,Gradski DV,DONJI GRAD,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Budućnost,Gradski DV,DONJI GRAD,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Budućnost,Gradski DV,DONJI GRAD,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Budućnost,Gradski DV,DONJI GRAD,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Budućnost,Gradski DV,DONJI GRAD,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Budućnost,Gradski DV,DONJI GRAD,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Budućnost,Gradski DV,DONJI GRAD,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Budućnost,Gradski DV,DONJI GRAD,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Budućnost,Gradski DV,DONJI GRAD,Vrtić,4 do 5 godina,Redoviti,4
+2025-01-01,DV Budućnost,Gradski DV,DONJI GRAD,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Budućnost,Gradski DV,DONJI GRAD,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Budućnost,Gradski DV,DONJI GRAD,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Budućnost,Gradski DV,DONJI GRAD,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Budućnost,Gradski DV,DONJI GRAD,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Izvor,Gradski DV,DONJI GRAD,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Izvor,Gradski DV,DONJI GRAD,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Izvor,Gradski DV,DONJI GRAD,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Izvor,Gradski DV,DONJI GRAD,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Izvor,Gradski DV,DONJI GRAD,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Izvor,Gradski DV,DONJI GRAD,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Izvor,Gradski DV,DONJI GRAD,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Izvor,Gradski DV,DONJI GRAD,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Izvor,Gradski DV,DONJI GRAD,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Izvor,Gradski DV,DONJI GRAD,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Izvor,Gradski DV,DONJI GRAD,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Izvor,Gradski DV,DONJI GRAD,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Izvor,Gradski DV,DONJI GRAD,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Izvor,Gradski DV,DONJI GRAD,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Krijesnice,Gradski DV,DONJI GRAD,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Krijesnice,Gradski DV,DONJI GRAD,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Krijesnice,Gradski DV,DONJI GRAD,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Krijesnice,Gradski DV,DONJI GRAD,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Krijesnice,Gradski DV,DONJI GRAD,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Krijesnice,Gradski DV,DONJI GRAD,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Krijesnice,Gradski DV,DONJI GRAD,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Krijesnice,Gradski DV,DONJI GRAD,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Krijesnice,Gradski DV,DONJI GRAD,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Krijesnice,Gradski DV,DONJI GRAD,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Krijesnice,Gradski DV,DONJI GRAD,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Krijesnice,Gradski DV,DONJI GRAD,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Krijesnice,Gradski DV,DONJI GRAD,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Krijesnice,Gradski DV,DONJI GRAD,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Različak,Gradski DV,DONJI GRAD,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Različak,Gradski DV,DONJI GRAD,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Različak,Gradski DV,DONJI GRAD,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Različak,Gradski DV,DONJI GRAD,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Različak,Gradski DV,DONJI GRAD,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Različak,Gradski DV,DONJI GRAD,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Različak,Gradski DV,DONJI GRAD,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Različak,Gradski DV,DONJI GRAD,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Različak,Gradski DV,DONJI GRAD,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Različak,Gradski DV,DONJI GRAD,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Različak,Gradski DV,DONJI GRAD,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Različak,Gradski DV,DONJI GRAD,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Različak,Gradski DV,DONJI GRAD,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Različak,Gradski DV,DONJI GRAD,Vrtić,3 godine do OŠ mješovita,Posebni,2
+2025-01-01,DV Vedri dani,Gradski DV,DONJI GRAD,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Vedri dani,Gradski DV,DONJI GRAD,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Vedri dani,Gradski DV,DONJI GRAD,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Vedri dani,Gradski DV,DONJI GRAD,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Vedri dani,Gradski DV,DONJI GRAD,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Vedri dani,Gradski DV,DONJI GRAD,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Vedri dani,Gradski DV,DONJI GRAD,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Vedri dani,Gradski DV,DONJI GRAD,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Vedri dani,Gradski DV,DONJI GRAD,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Vedri dani,Gradski DV,DONJI GRAD,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Vedri dani,Gradski DV,DONJI GRAD,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Vedri dani,Gradski DV,DONJI GRAD,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Vedri dani,Gradski DV,DONJI GRAD,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Vedri dani,Gradski DV,DONJI GRAD,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Medveščak,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Medveščak,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Medveščak,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Medveščak,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Medveščak,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Medveščak,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Medveščak,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Medveščak,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Medveščak,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Medveščak,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Medveščak,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Vrtić,5 godina do OŠ,Redoviti,4
+2025-01-01,DV Medveščak,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Vrtić,5 godina do OŠ,Posebni,2
+2025-01-01,DV Medveščak,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Medveščak,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Tatjane Marinić,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Tatjane Marinić,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Tatjane Marinić,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Tatjane Marinić,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Tatjane Marinić,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Tatjane Marinić,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Tatjane Marinić,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Tatjane Marinić,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Tatjane Marinić,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Tatjane Marinić,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Tatjane Marinić,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Tatjane Marinić,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Tatjane Marinić,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Tatjane Marinić,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Vjeverica,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Vjeverica,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Vjeverica,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Vjeverica,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Vjeverica,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Vjeverica,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Vjeverica,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Vjeverica,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Vjeverica,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Vjeverica,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Vjeverica,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Vjeverica,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Vjeverica,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Vjeverica,Gradski DV,GORNJI GRAD - MEDVEŠČAK,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Iskrica,Gradski DV,TRNJE,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Iskrica,Gradski DV,TRNJE,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Iskrica,Gradski DV,TRNJE,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Iskrica,Gradski DV,TRNJE,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Iskrica,Gradski DV,TRNJE,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Iskrica,Gradski DV,TRNJE,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Iskrica,Gradski DV,TRNJE,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Iskrica,Gradski DV,TRNJE,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Iskrica,Gradski DV,TRNJE,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Iskrica,Gradski DV,TRNJE,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Iskrica,Gradski DV,TRNJE,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Iskrica,Gradski DV,TRNJE,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Iskrica,Gradski DV,TRNJE,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Iskrica,Gradski DV,TRNJE,Vrtić,3 godine do OŠ mješovita,Posebni,2
+2025-01-01,DV Savica,Gradski DV,TRNJE,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Savica,Gradski DV,TRNJE,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Savica,Gradski DV,TRNJE,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Savica,Gradski DV,TRNJE,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Savica,Gradski DV,TRNJE,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Savica,Gradski DV,TRNJE,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Savica,Gradski DV,TRNJE,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Savica,Gradski DV,TRNJE,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Savica,Gradski DV,TRNJE,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Savica,Gradski DV,TRNJE,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Savica,Gradski DV,TRNJE,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Savica,Gradski DV,TRNJE,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Savica,Gradski DV,TRNJE,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Savica,Gradski DV,TRNJE,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Vladimira Nazora,Gradski DV,TRNJE,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Vladimira Nazora,Gradski DV,TRNJE,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Vladimira Nazora,Gradski DV,TRNJE,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Vladimira Nazora,Gradski DV,TRNJE,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Vladimira Nazora,Gradski DV,TRNJE,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Vladimira Nazora,Gradski DV,TRNJE,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Vladimira Nazora,Gradski DV,TRNJE,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Vladimira Nazora,Gradski DV,TRNJE,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Vladimira Nazora,Gradski DV,TRNJE,Vrtić,4 do 5 godina,Redoviti,5
+2025-01-01,DV Vladimira Nazora,Gradski DV,TRNJE,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Vladimira Nazora,Gradski DV,TRNJE,Vrtić,5 godina do OŠ,Redoviti,3
+2025-01-01,DV Vladimira Nazora,Gradski DV,TRNJE,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Vladimira Nazora,Gradski DV,TRNJE,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Vladimira Nazora,Gradski DV,TRNJE,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Vrbik,Gradski DV,TRNJE,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Vrbik,Gradski DV,TRNJE,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Vrbik,Gradski DV,TRNJE,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Vrbik,Gradski DV,TRNJE,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Vrbik,Gradski DV,TRNJE,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Vrbik,Gradski DV,TRNJE,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Vrbik,Gradski DV,TRNJE,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Vrbik,Gradski DV,TRNJE,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Vrbik,Gradski DV,TRNJE,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Vrbik,Gradski DV,TRNJE,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Vrbik,Gradski DV,TRNJE,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Vrbik,Gradski DV,TRNJE,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Vrbik,Gradski DV,TRNJE,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Vrbik,Gradski DV,TRNJE,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Bukovac,Gradski DV,MAKSIMIR,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Bukovac,Gradski DV,MAKSIMIR,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Bukovac,Gradski DV,MAKSIMIR,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Bukovac,Gradski DV,MAKSIMIR,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Bukovac,Gradski DV,MAKSIMIR,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Bukovac,Gradski DV,MAKSIMIR,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Bukovac,Gradski DV,MAKSIMIR,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Bukovac,Gradski DV,MAKSIMIR,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Bukovac,Gradski DV,MAKSIMIR,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Bukovac,Gradski DV,MAKSIMIR,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Bukovac,Gradski DV,MAKSIMIR,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Bukovac,Gradski DV,MAKSIMIR,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Bukovac,Gradski DV,MAKSIMIR,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Bukovac,Gradski DV,MAKSIMIR,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Maksimir,Gradski DV,MAKSIMIR,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Maksimir,Gradski DV,MAKSIMIR,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Maksimir,Gradski DV,MAKSIMIR,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Maksimir,Gradski DV,MAKSIMIR,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Maksimir,Gradski DV,MAKSIMIR,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Maksimir,Gradski DV,MAKSIMIR,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Maksimir,Gradski DV,MAKSIMIR,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Maksimir,Gradski DV,MAKSIMIR,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Maksimir,Gradski DV,MAKSIMIR,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Maksimir,Gradski DV,MAKSIMIR,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Maksimir,Gradski DV,MAKSIMIR,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Maksimir,Gradski DV,MAKSIMIR,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Maksimir,Gradski DV,MAKSIMIR,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Maksimir,Gradski DV,MAKSIMIR,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Mali Princ,Gradski DV,MAKSIMIR,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Mali Princ,Gradski DV,MAKSIMIR,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Mali Princ,Gradski DV,MAKSIMIR,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Mali Princ,Gradski DV,MAKSIMIR,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Mali Princ,Gradski DV,MAKSIMIR,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Mali Princ,Gradski DV,MAKSIMIR,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Mali Princ,Gradski DV,MAKSIMIR,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Mali Princ,Gradski DV,MAKSIMIR,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Mali Princ,Gradski DV,MAKSIMIR,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Mali Princ,Gradski DV,MAKSIMIR,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Mali Princ,Gradski DV,MAKSIMIR,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Mali Princ,Gradski DV,MAKSIMIR,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Mali Princ,Gradski DV,MAKSIMIR,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Mali Princ,Gradski DV,MAKSIMIR,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Trnoružica,Gradski DV,MAKSIMIR,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Trnoružica,Gradski DV,MAKSIMIR,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Trnoružica,Gradski DV,MAKSIMIR,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Trnoružica,Gradski DV,MAKSIMIR,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Trnoružica,Gradski DV,MAKSIMIR,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Trnoružica,Gradski DV,MAKSIMIR,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Trnoružica,Gradski DV,MAKSIMIR,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Trnoružica,Gradski DV,MAKSIMIR,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Trnoružica,Gradski DV,MAKSIMIR,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Trnoružica,Gradski DV,MAKSIMIR,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Trnoružica,Gradski DV,MAKSIMIR,Vrtić,5 godina do OŠ,Redoviti,5
+2025-01-01,DV Trnoružica,Gradski DV,MAKSIMIR,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Trnoružica,Gradski DV,MAKSIMIR,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Trnoružica,Gradski DV,MAKSIMIR,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Cvrčak,Gradski DV,PEŠČENICA - ŽITNJAK,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Cvrčak,Gradski DV,PEŠČENICA - ŽITNJAK,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Cvrčak,Gradski DV,PEŠČENICA - ŽITNJAK,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Cvrčak,Gradski DV,PEŠČENICA - ŽITNJAK,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Cvrčak,Gradski DV,PEŠČENICA - ŽITNJAK,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Cvrčak,Gradski DV,PEŠČENICA - ŽITNJAK,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Cvrčak,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Cvrčak,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,3 do 4 godine,Posebni,2
+2025-01-01,DV Cvrčak,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Cvrčak,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Cvrčak,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Cvrčak,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Cvrčak,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Cvrčak,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,3 godine do OŠ mješovita,Posebni,4
+2025-01-01,DV Duga,Gradski DV,PEŠČENICA - ŽITNJAK,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Duga,Gradski DV,PEŠČENICA - ŽITNJAK,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Duga,Gradski DV,PEŠČENICA - ŽITNJAK,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Duga,Gradski DV,PEŠČENICA - ŽITNJAK,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Duga,Gradski DV,PEŠČENICA - ŽITNJAK,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Duga,Gradski DV,PEŠČENICA - ŽITNJAK,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Duga,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,3 do 4 godine,Redoviti,5
+2025-01-01,DV Duga,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Duga,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Duga,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Duga,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Duga,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Duga,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Duga,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Milana Sachsa,Gradski DV,PEŠČENICA - ŽITNJAK,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Milana Sachsa,Gradski DV,PEŠČENICA - ŽITNJAK,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Milana Sachsa,Gradski DV,PEŠČENICA - ŽITNJAK,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Milana Sachsa,Gradski DV,PEŠČENICA - ŽITNJAK,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Milana Sachsa,Gradski DV,PEŠČENICA - ŽITNJAK,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Milana Sachsa,Gradski DV,PEŠČENICA - ŽITNJAK,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Milana Sachsa,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,3 do 4 godine,Redoviti,4
+2025-01-01,DV Milana Sachsa,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Milana Sachsa,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Milana Sachsa,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Milana Sachsa,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,5 godina do OŠ,Redoviti,1
+2025-01-01,DV Milana Sachsa,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Milana Sachsa,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Milana Sachsa,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Zrno,Gradski DV,PEŠČENICA - ŽITNJAK,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Zrno,Gradski DV,PEŠČENICA - ŽITNJAK,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Zrno,Gradski DV,PEŠČENICA - ŽITNJAK,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Zrno,Gradski DV,PEŠČENICA - ŽITNJAK,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Zrno,Gradski DV,PEŠČENICA - ŽITNJAK,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Zrno,Gradski DV,PEŠČENICA - ŽITNJAK,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Zrno,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Zrno,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Zrno,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Zrno,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Zrno,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,5 godina do OŠ,Redoviti,2
+2025-01-01,DV Zrno,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Zrno,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Zrno,Gradski DV,PEŠČENICA - ŽITNJAK,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Sopot,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Sopot,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Sopot,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Sopot,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Sopot,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Sopot,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Sopot,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Sopot,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Sopot,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Sopot,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Sopot,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Sopot,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Sopot,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Sopot,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Tratinčica,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Tratinčica,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Tratinčica,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Tratinčica,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Tratinčica,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Tratinčica,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Tratinčica,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Tratinčica,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Tratinčica,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,4 do 5 godina,Redoviti,1
+2025-01-01,DV Tratinčica,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Tratinčica,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,5 godina do OŠ,Redoviti,10
+2025-01-01,DV Tratinčica,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Tratinčica,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Tratinčica,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Travno,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Travno,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Travno,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Travno,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Travno,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Travno,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Travno,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Travno,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Travno,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Travno,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Travno,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Travno,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Travno,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Travno,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Utrina,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Utrina,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Utrina,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Utrina,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Utrina,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Utrina,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Utrina,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Utrina,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Utrina,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Utrina,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Utrina,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,5 godina do OŠ,Redoviti,10
+2025-01-01,DV Utrina,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Utrina,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Utrina,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,3 godine do OŠ mješovita,Posebni,5
+2025-01-01,DV Zapruđe,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Zapruđe,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Zapruđe,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Zapruđe,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Zapruđe,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Zapruđe,Gradski DV,NOVI ZAGREB - ISTOK,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Zapruđe,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Zapruđe,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Zapruđe,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,4 do 5 godina,Redoviti,4
+2025-01-01,DV Zapruđe,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,4 do 5 godina,Posebni,1
+2025-01-01,DV Zapruđe,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,5 godina do OŠ,Redoviti,5
+2025-01-01,DV Zapruđe,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Zapruđe,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Zapruđe,Gradski DV,NOVI ZAGREB - ISTOK,Vrtić,3 godine do OŠ mješovita,Posebni,3
+2025-01-01,DV Botinec,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Botinec,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Botinec,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Botinec,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Botinec,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Botinec,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Botinec,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Botinec,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Botinec,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Botinec,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Botinec,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Botinec,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Botinec,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Botinec,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Hrvatski Leskovac,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Hrvatski Leskovac,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Hrvatski Leskovac,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Hrvatski Leskovac,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Hrvatski Leskovac,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Hrvatski Leskovac,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Hrvatski Leskovac,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Hrvatski Leskovac,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Hrvatski Leskovac,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Hrvatski Leskovac,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Hrvatski Leskovac,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Hrvatski Leskovac,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Hrvatski Leskovac,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Hrvatski Leskovac,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Remetinec,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Remetinec,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Remetinec,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Remetinec,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Remetinec,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Remetinec,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Remetinec,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Remetinec,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Remetinec,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Remetinec,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Remetinec,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Remetinec,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Remetinec,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Remetinec,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Siget,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Siget,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Siget,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Siget,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Siget,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Siget,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Siget,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Siget,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Siget,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Siget,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Siget,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Siget,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Siget,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Siget,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Trnsko,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Trnsko,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Trnsko,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,2 do 3 godine,Redoviti,1
+2025-01-01,DV Trnsko,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Trnsko,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Trnsko,Gradski DV,NOVI ZAGREB - ZAPAD,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Trnsko,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,3 do 4 godine,Redoviti,2
+2025-01-01,DV Trnsko,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Trnsko,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,4 do 5 godina,Redoviti,2
+2025-01-01,DV Trnsko,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Trnsko,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,5 godina do OŠ,Redoviti,2
+2025-01-01,DV Trnsko,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,5 godina do OŠ,Posebni,6
+2025-01-01,DV Trnsko,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Trnsko,Gradski DV,NOVI ZAGREB - ZAPAD,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Bajka,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Bajka,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Bajka,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Bajka,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Bajka,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Bajka,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Bajka,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,3 do 4 godine,Redoviti,2
+2025-01-01,DV Bajka,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Bajka,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,4 do 5 godina,Redoviti,2
+2025-01-01,DV Bajka,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Bajka,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Bajka,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Bajka,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,3 godine do OŠ mješovita,Redoviti,1
+2025-01-01,DV Bajka,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,3 godine do OŠ mješovita,Posebni,3
+2025-01-01,DV Grigora Viteza,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Grigora Viteza,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Grigora Viteza,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Grigora Viteza,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Grigora Viteza,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Grigora Viteza,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Grigora Viteza,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Grigora Viteza,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Grigora Viteza,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,4 do 5 godina,Redoviti,1
+2025-01-01,DV Grigora Viteza,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Grigora Viteza,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,5 godina do OŠ,Redoviti,5
+2025-01-01,DV Grigora Viteza,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Grigora Viteza,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Grigora Viteza,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,3 godine do OŠ mješovita,Posebni,3
+2025-01-01,DV Potočnica,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Potočnica,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Potočnica,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Potočnica,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Potočnica,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Potočnica,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Potočnica,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Potočnica,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Potočnica,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Potočnica,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Potočnica,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,5 godina do OŠ,Redoviti,3
+2025-01-01,DV Potočnica,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Potočnica,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Potočnica,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Trešnjevka,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Trešnjevka,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Trešnjevka,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Trešnjevka,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Trešnjevka,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Trešnjevka,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Trešnjevka,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Trešnjevka,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Trešnjevka,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Trešnjevka,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Trešnjevka,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Trešnjevka,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Trešnjevka,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Trešnjevka,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Zvončić,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Zvončić,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Zvončić,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Zvončić,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Zvončić,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Zvončić,Gradski DV,TREŠNJEVKA - SJEVER,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Zvončić,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Zvončić,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Zvončić,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Zvončić,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Zvončić,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,5 godina do OŠ,Redoviti,6
+2025-01-01,DV Zvončić,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Zvončić,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Zvončić,Gradski DV,TREŠNJEVKA - SJEVER,Vrtić,3 godine do OŠ mješovita,Posebni,2
+2025-01-01,DV Jarun,Gradski DV,TREŠNJEVKA - JUG,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Jarun,Gradski DV,TREŠNJEVKA - JUG,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Jarun,Gradski DV,TREŠNJEVKA - JUG,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Jarun,Gradski DV,TREŠNJEVKA - JUG,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Jarun,Gradski DV,TREŠNJEVKA - JUG,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Jarun,Gradski DV,TREŠNJEVKA - JUG,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Jarun,Gradski DV,TREŠNJEVKA - JUG,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Jarun,Gradski DV,TREŠNJEVKA - JUG,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Jarun,Gradski DV,TREŠNJEVKA - JUG,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Jarun,Gradski DV,TREŠNJEVKA - JUG,Vrtić,4 do 5 godina,Posebni,2
+2025-01-01,DV Jarun,Gradski DV,TREŠNJEVKA - JUG,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Jarun,Gradski DV,TREŠNJEVKA - JUG,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Jarun,Gradski DV,TREŠNJEVKA - JUG,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Jarun,Gradski DV,TREŠNJEVKA - JUG,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Matije Gupca,Gradski DV,TREŠNJEVKA - JUG,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Matije Gupca,Gradski DV,TREŠNJEVKA - JUG,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Matije Gupca,Gradski DV,TREŠNJEVKA - JUG,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Matije Gupca,Gradski DV,TREŠNJEVKA - JUG,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Matije Gupca,Gradski DV,TREŠNJEVKA - JUG,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Matije Gupca,Gradski DV,TREŠNJEVKA - JUG,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Matije Gupca,Gradski DV,TREŠNJEVKA - JUG,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Matije Gupca,Gradski DV,TREŠNJEVKA - JUG,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Matije Gupca,Gradski DV,TREŠNJEVKA - JUG,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Matije Gupca,Gradski DV,TREŠNJEVKA - JUG,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Matije Gupca,Gradski DV,TREŠNJEVKA - JUG,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Matije Gupca,Gradski DV,TREŠNJEVKA - JUG,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Matije Gupca,Gradski DV,TREŠNJEVKA - JUG,Vrtić,3 godine do OŠ mješovita,Redoviti,1
+2025-01-01,DV Matije Gupca,Gradski DV,TREŠNJEVKA - JUG,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Prečko,Gradski DV,TREŠNJEVKA - JUG,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Prečko,Gradski DV,TREŠNJEVKA - JUG,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Prečko,Gradski DV,TREŠNJEVKA - JUG,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Prečko,Gradski DV,TREŠNJEVKA - JUG,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Prečko,Gradski DV,TREŠNJEVKA - JUG,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Prečko,Gradski DV,TREŠNJEVKA - JUG,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Prečko,Gradski DV,TREŠNJEVKA - JUG,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Prečko,Gradski DV,TREŠNJEVKA - JUG,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Prečko,Gradski DV,TREŠNJEVKA - JUG,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Prečko,Gradski DV,TREŠNJEVKA - JUG,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Prečko,Gradski DV,TREŠNJEVKA - JUG,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Prečko,Gradski DV,TREŠNJEVKA - JUG,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Prečko,Gradski DV,TREŠNJEVKA - JUG,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Prečko,Gradski DV,TREŠNJEVKA - JUG,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Srednjaci,Gradski DV,TREŠNJEVKA - JUG,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Srednjaci,Gradski DV,TREŠNJEVKA - JUG,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Srednjaci,Gradski DV,TREŠNJEVKA - JUG,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Srednjaci,Gradski DV,TREŠNJEVKA - JUG,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Srednjaci,Gradski DV,TREŠNJEVKA - JUG,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Srednjaci,Gradski DV,TREŠNJEVKA - JUG,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Srednjaci,Gradski DV,TREŠNJEVKA - JUG,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Srednjaci,Gradski DV,TREŠNJEVKA - JUG,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Srednjaci,Gradski DV,TREŠNJEVKA - JUG,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Srednjaci,Gradski DV,TREŠNJEVKA - JUG,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Srednjaci,Gradski DV,TREŠNJEVKA - JUG,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Srednjaci,Gradski DV,TREŠNJEVKA - JUG,Vrtić,5 godina do OŠ,Posebni,1
+2025-01-01,DV Srednjaci,Gradski DV,TREŠNJEVKA - JUG,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Srednjaci,Gradski DV,TREŠNJEVKA - JUG,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Petar Pan,Gradski DV,ČRNOMEREC,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Petar Pan,Gradski DV,ČRNOMEREC,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Petar Pan,Gradski DV,ČRNOMEREC,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Petar Pan,Gradski DV,ČRNOMEREC,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Petar Pan,Gradski DV,ČRNOMEREC,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Petar Pan,Gradski DV,ČRNOMEREC,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Petar Pan,Gradski DV,ČRNOMEREC,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Petar Pan,Gradski DV,ČRNOMEREC,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Petar Pan,Gradski DV,ČRNOMEREC,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Petar Pan,Gradski DV,ČRNOMEREC,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Petar Pan,Gradski DV,ČRNOMEREC,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Petar Pan,Gradski DV,ČRNOMEREC,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Petar Pan,Gradski DV,ČRNOMEREC,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Petar Pan,Gradski DV,ČRNOMEREC,Vrtić,3 godine do OŠ mješovita,Posebni,1
+2025-01-01,DV Šumska Jagoda,Gradski DV,ČRNOMEREC,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Šumska Jagoda,Gradski DV,ČRNOMEREC,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Šumska Jagoda,Gradski DV,ČRNOMEREC,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Šumska Jagoda,Gradski DV,ČRNOMEREC,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Šumska Jagoda,Gradski DV,ČRNOMEREC,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Šumska Jagoda,Gradski DV,ČRNOMEREC,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Šumska Jagoda,Gradski DV,ČRNOMEREC,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Šumska Jagoda,Gradski DV,ČRNOMEREC,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Šumska Jagoda,Gradski DV,ČRNOMEREC,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Šumska Jagoda,Gradski DV,ČRNOMEREC,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Šumska Jagoda,Gradski DV,ČRNOMEREC,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Šumska Jagoda,Gradski DV,ČRNOMEREC,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Šumska Jagoda,Gradski DV,ČRNOMEREC,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Šumska Jagoda,Gradski DV,ČRNOMEREC,Vrtić,3 godine do OŠ mješovita,Posebni,1
+2025-01-01,DV Kolibri,Gradski DV,GORNJA DUBRAVA,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Kolibri,Gradski DV,GORNJA DUBRAVA,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Kolibri,Gradski DV,GORNJA DUBRAVA,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Kolibri,Gradski DV,GORNJA DUBRAVA,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Kolibri,Gradski DV,GORNJA DUBRAVA,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Kolibri,Gradski DV,GORNJA DUBRAVA,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Kolibri,Gradski DV,GORNJA DUBRAVA,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Kolibri,Gradski DV,GORNJA DUBRAVA,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Kolibri,Gradski DV,GORNJA DUBRAVA,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Kolibri,Gradski DV,GORNJA DUBRAVA,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Kolibri,Gradski DV,GORNJA DUBRAVA,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Kolibri,Gradski DV,GORNJA DUBRAVA,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Kolibri,Gradski DV,GORNJA DUBRAVA,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Kolibri,Gradski DV,GORNJA DUBRAVA,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Medo Brundo,Gradski DV,GORNJA DUBRAVA,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Medo Brundo,Gradski DV,GORNJA DUBRAVA,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Medo Brundo,Gradski DV,GORNJA DUBRAVA,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Medo Brundo,Gradski DV,GORNJA DUBRAVA,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Medo Brundo,Gradski DV,GORNJA DUBRAVA,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Medo Brundo,Gradski DV,GORNJA DUBRAVA,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Medo Brundo,Gradski DV,GORNJA DUBRAVA,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Medo Brundo,Gradski DV,GORNJA DUBRAVA,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Medo Brundo,Gradski DV,GORNJA DUBRAVA,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Medo Brundo,Gradski DV,GORNJA DUBRAVA,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Medo Brundo,Gradski DV,GORNJA DUBRAVA,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Medo Brundo,Gradski DV,GORNJA DUBRAVA,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Medo Brundo,Gradski DV,GORNJA DUBRAVA,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Medo Brundo,Gradski DV,GORNJA DUBRAVA,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Pčelica,Gradski DV,GORNJA DUBRAVA,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Pčelica,Gradski DV,GORNJA DUBRAVA,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Pčelica,Gradski DV,GORNJA DUBRAVA,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Pčelica,Gradski DV,GORNJA DUBRAVA,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Pčelica,Gradski DV,GORNJA DUBRAVA,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Pčelica,Gradski DV,GORNJA DUBRAVA,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Pčelica,Gradski DV,GORNJA DUBRAVA,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Pčelica,Gradski DV,GORNJA DUBRAVA,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Pčelica,Gradski DV,GORNJA DUBRAVA,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Pčelica,Gradski DV,GORNJA DUBRAVA,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Pčelica,Gradski DV,GORNJA DUBRAVA,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Pčelica,Gradski DV,GORNJA DUBRAVA,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Pčelica,Gradski DV,GORNJA DUBRAVA,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Pčelica,Gradski DV,GORNJA DUBRAVA,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Poletarac,Gradski DV,GORNJA DUBRAVA,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Poletarac,Gradski DV,GORNJA DUBRAVA,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Poletarac,Gradski DV,GORNJA DUBRAVA,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Poletarac,Gradski DV,GORNJA DUBRAVA,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Poletarac,Gradski DV,GORNJA DUBRAVA,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Poletarac,Gradski DV,GORNJA DUBRAVA,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Poletarac,Gradski DV,GORNJA DUBRAVA,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Poletarac,Gradski DV,GORNJA DUBRAVA,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Poletarac,Gradski DV,GORNJA DUBRAVA,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Poletarac,Gradski DV,GORNJA DUBRAVA,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Poletarac,Gradski DV,GORNJA DUBRAVA,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Poletarac,Gradski DV,GORNJA DUBRAVA,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Poletarac,Gradski DV,GORNJA DUBRAVA,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Poletarac,Gradski DV,GORNJA DUBRAVA,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Radost,Gradski DV,GORNJA DUBRAVA,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Radost,Gradski DV,GORNJA DUBRAVA,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Radost,Gradski DV,GORNJA DUBRAVA,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Radost,Gradski DV,GORNJA DUBRAVA,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Radost,Gradski DV,GORNJA DUBRAVA,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Radost,Gradski DV,GORNJA DUBRAVA,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Radost,Gradski DV,GORNJA DUBRAVA,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Radost,Gradski DV,GORNJA DUBRAVA,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Radost,Gradski DV,GORNJA DUBRAVA,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Radost,Gradski DV,GORNJA DUBRAVA,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Radost,Gradski DV,GORNJA DUBRAVA,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Radost,Gradski DV,GORNJA DUBRAVA,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Radost,Gradski DV,GORNJA DUBRAVA,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Radost,Gradski DV,GORNJA DUBRAVA,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Sunce,Gradski DV,GORNJA DUBRAVA,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Sunce,Gradski DV,GORNJA DUBRAVA,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Sunce,Gradski DV,GORNJA DUBRAVA,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Sunce,Gradski DV,GORNJA DUBRAVA,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Sunce,Gradski DV,GORNJA DUBRAVA,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Sunce,Gradski DV,GORNJA DUBRAVA,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Sunce,Gradski DV,GORNJA DUBRAVA,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Sunce,Gradski DV,GORNJA DUBRAVA,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Sunce,Gradski DV,GORNJA DUBRAVA,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Sunce,Gradski DV,GORNJA DUBRAVA,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Sunce,Gradski DV,GORNJA DUBRAVA,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Sunce,Gradski DV,GORNJA DUBRAVA,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Sunce,Gradski DV,GORNJA DUBRAVA,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Sunce,Gradski DV,GORNJA DUBRAVA,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Ivane Brlić Mažuranić,Gradski DV,DONJA DUBRAVA,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Ivane Brlić Mažuranić,Gradski DV,DONJA DUBRAVA,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Ivane Brlić Mažuranić,Gradski DV,DONJA DUBRAVA,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Ivane Brlić Mažuranić,Gradski DV,DONJA DUBRAVA,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Ivane Brlić Mažuranić,Gradski DV,DONJA DUBRAVA,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Ivane Brlić Mažuranić,Gradski DV,DONJA DUBRAVA,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Ivane Brlić Mažuranić,Gradski DV,DONJA DUBRAVA,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Ivane Brlić Mažuranić,Gradski DV,DONJA DUBRAVA,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Ivane Brlić Mažuranić,Gradski DV,DONJA DUBRAVA,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Ivane Brlić Mažuranić,Gradski DV,DONJA DUBRAVA,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Ivane Brlić Mažuranić,Gradski DV,DONJA DUBRAVA,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Ivane Brlić Mažuranić,Gradski DV,DONJA DUBRAVA,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Ivane Brlić Mažuranić,Gradski DV,DONJA DUBRAVA,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Ivane Brlić Mažuranić,Gradski DV,DONJA DUBRAVA,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Jabuka,Gradski DV,DONJA DUBRAVA,Jaslice,1 do 2 godine,Redoviti,1
+2025-01-01,DV Jabuka,Gradski DV,DONJA DUBRAVA,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Jabuka,Gradski DV,DONJA DUBRAVA,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Jabuka,Gradski DV,DONJA DUBRAVA,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Jabuka,Gradski DV,DONJA DUBRAVA,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Jabuka,Gradski DV,DONJA DUBRAVA,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Jabuka,Gradski DV,DONJA DUBRAVA,Vrtić,3 do 4 godine,Redoviti,1
+2025-01-01,DV Jabuka,Gradski DV,DONJA DUBRAVA,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Jabuka,Gradski DV,DONJA DUBRAVA,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Jabuka,Gradski DV,DONJA DUBRAVA,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Jabuka,Gradski DV,DONJA DUBRAVA,Vrtić,5 godina do OŠ,Redoviti,1
+2025-01-01,DV Jabuka,Gradski DV,DONJA DUBRAVA,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Jabuka,Gradski DV,DONJA DUBRAVA,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Jabuka,Gradski DV,DONJA DUBRAVA,Vrtić,3 godine do OŠ mješovita,Posebni,1
+2025-01-01,DV Kustošija,Gradski DV,STENJEVEC,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Kustošija,Gradski DV,STENJEVEC,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Kustošija,Gradski DV,STENJEVEC,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Kustošija,Gradski DV,STENJEVEC,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Kustošija,Gradski DV,STENJEVEC,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Kustošija,Gradski DV,STENJEVEC,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Kustošija,Gradski DV,STENJEVEC,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Kustošija,Gradski DV,STENJEVEC,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Kustošija,Gradski DV,STENJEVEC,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Kustošija,Gradski DV,STENJEVEC,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Kustošija,Gradski DV,STENJEVEC,Vrtić,5 godina do OŠ,Redoviti,5
+2025-01-01,DV Kustošija,Gradski DV,STENJEVEC,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Kustošija,Gradski DV,STENJEVEC,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Kustošija,Gradski DV,STENJEVEC,Vrtić,3 godine do OŠ mješovita,Posebni,4
+2025-01-01,DV Malešnica,Gradski DV,STENJEVEC,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Malešnica,Gradski DV,STENJEVEC,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Malešnica,Gradski DV,STENJEVEC,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Malešnica,Gradski DV,STENJEVEC,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Malešnica,Gradski DV,STENJEVEC,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Malešnica,Gradski DV,STENJEVEC,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Malešnica,Gradski DV,STENJEVEC,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Malešnica,Gradski DV,STENJEVEC,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Malešnica,Gradski DV,STENJEVEC,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Malešnica,Gradski DV,STENJEVEC,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Malešnica,Gradski DV,STENJEVEC,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Malešnica,Gradski DV,STENJEVEC,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Malešnica,Gradski DV,STENJEVEC,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Malešnica,Gradski DV,STENJEVEC,Vrtić,3 godine do OŠ mješovita,Posebni,2
+2025-01-01,DV Sunčana,Gradski DV,STENJEVEC,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Sunčana,Gradski DV,STENJEVEC,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Sunčana,Gradski DV,STENJEVEC,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Sunčana,Gradski DV,STENJEVEC,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Sunčana,Gradski DV,STENJEVEC,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Sunčana,Gradski DV,STENJEVEC,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Sunčana,Gradski DV,STENJEVEC,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Sunčana,Gradski DV,STENJEVEC,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Sunčana,Gradski DV,STENJEVEC,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Sunčana,Gradski DV,STENJEVEC,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Sunčana,Gradski DV,STENJEVEC,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Sunčana,Gradski DV,STENJEVEC,Vrtić,5 godina do OŠ,Posebni,2
+2025-01-01,DV Sunčana,Gradski DV,STENJEVEC,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Sunčana,Gradski DV,STENJEVEC,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Špansko,Gradski DV,STENJEVEC,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Špansko,Gradski DV,STENJEVEC,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Špansko,Gradski DV,STENJEVEC,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Špansko,Gradski DV,STENJEVEC,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Špansko,Gradski DV,STENJEVEC,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Špansko,Gradski DV,STENJEVEC,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Špansko,Gradski DV,STENJEVEC,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Špansko,Gradski DV,STENJEVEC,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Špansko,Gradski DV,STENJEVEC,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Špansko,Gradski DV,STENJEVEC,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Špansko,Gradski DV,STENJEVEC,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Špansko,Gradski DV,STENJEVEC,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Špansko,Gradski DV,STENJEVEC,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Špansko,Gradski DV,STENJEVEC,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Gajnice,Gradski DV,PODSUSED - VRAPČE,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Gajnice,Gradski DV,PODSUSED - VRAPČE,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Gajnice,Gradski DV,PODSUSED - VRAPČE,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Gajnice,Gradski DV,PODSUSED - VRAPČE,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Gajnice,Gradski DV,PODSUSED - VRAPČE,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Gajnice,Gradski DV,PODSUSED - VRAPČE,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Gajnice,Gradski DV,PODSUSED - VRAPČE,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Gajnice,Gradski DV,PODSUSED - VRAPČE,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Gajnice,Gradski DV,PODSUSED - VRAPČE,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Gajnice,Gradski DV,PODSUSED - VRAPČE,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Gajnice,Gradski DV,PODSUSED - VRAPČE,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Gajnice,Gradski DV,PODSUSED - VRAPČE,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Gajnice,Gradski DV,PODSUSED - VRAPČE,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Gajnice,Gradski DV,PODSUSED - VRAPČE,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Vrapče,Gradski DV,PODSUSED - VRAPČE,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Vrapče,Gradski DV,PODSUSED - VRAPČE,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Vrapče,Gradski DV,PODSUSED - VRAPČE,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Vrapče,Gradski DV,PODSUSED - VRAPČE,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Vrapče,Gradski DV,PODSUSED - VRAPČE,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Vrapče,Gradski DV,PODSUSED - VRAPČE,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Vrapče,Gradski DV,PODSUSED - VRAPČE,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Vrapče,Gradski DV,PODSUSED - VRAPČE,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Vrapče,Gradski DV,PODSUSED - VRAPČE,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Vrapče,Gradski DV,PODSUSED - VRAPČE,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Vrapče,Gradski DV,PODSUSED - VRAPČE,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Vrapče,Gradski DV,PODSUSED - VRAPČE,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Vrapče,Gradski DV,PODSUSED - VRAPČE,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Vrapče,Gradski DV,PODSUSED - VRAPČE,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Markuševec,Gradski DV,PODSLJEME,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Markuševec,Gradski DV,PODSLJEME,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Markuševec,Gradski DV,PODSLJEME,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Markuševec,Gradski DV,PODSLJEME,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Markuševec,Gradski DV,PODSLJEME,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Markuševec,Gradski DV,PODSLJEME,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Markuševec,Gradski DV,PODSLJEME,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Markuševec,Gradski DV,PODSLJEME,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Markuševec,Gradski DV,PODSLJEME,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Markuševec,Gradski DV,PODSLJEME,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Markuševec,Gradski DV,PODSLJEME,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Markuševec,Gradski DV,PODSLJEME,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Markuševec,Gradski DV,PODSLJEME,Vrtić,3 godine do OŠ mješovita,Redoviti,1
+2025-01-01,DV Markuševec,Gradski DV,PODSLJEME,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Ententini,Gradski DV,SESVETE,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Ententini,Gradski DV,SESVETE,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Ententini,Gradski DV,SESVETE,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Ententini,Gradski DV,SESVETE,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Ententini,Gradski DV,SESVETE,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Ententini,Gradski DV,SESVETE,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Ententini,Gradski DV,SESVETE,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Ententini,Gradski DV,SESVETE,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Ententini,Gradski DV,SESVETE,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Ententini,Gradski DV,SESVETE,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Ententini,Gradski DV,SESVETE,Vrtić,5 godina do OŠ,Redoviti,2
+2025-01-01,DV Ententini,Gradski DV,SESVETE,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Ententini,Gradski DV,SESVETE,Vrtić,3 godine do OŠ mješovita,Redoviti,2
+2025-01-01,DV Ententini,Gradski DV,SESVETE,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Leptir,Gradski DV,SESVETE,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Leptir,Gradski DV,SESVETE,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Leptir,Gradski DV,SESVETE,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Leptir,Gradski DV,SESVETE,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Leptir,Gradski DV,SESVETE,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Leptir,Gradski DV,SESVETE,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Leptir,Gradski DV,SESVETE,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Leptir,Gradski DV,SESVETE,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Leptir,Gradski DV,SESVETE,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Leptir,Gradski DV,SESVETE,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Leptir,Gradski DV,SESVETE,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Leptir,Gradski DV,SESVETE,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Leptir,Gradski DV,SESVETE,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Leptir,Gradski DV,SESVETE,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Sesvete,Gradski DV,SESVETE,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Sesvete,Gradski DV,SESVETE,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Sesvete,Gradski DV,SESVETE,Jaslice,2 do 3 godine,Redoviti,0
+2025-01-01,DV Sesvete,Gradski DV,SESVETE,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Sesvete,Gradski DV,SESVETE,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Sesvete,Gradski DV,SESVETE,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Sesvete,Gradski DV,SESVETE,Vrtić,3 do 4 godine,Redoviti,0
+2025-01-01,DV Sesvete,Gradski DV,SESVETE,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Sesvete,Gradski DV,SESVETE,Vrtić,4 do 5 godina,Redoviti,0
+2025-01-01,DV Sesvete,Gradski DV,SESVETE,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Sesvete,Gradski DV,SESVETE,Vrtić,5 godina do OŠ,Redoviti,0
+2025-01-01,DV Sesvete,Gradski DV,SESVETE,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Sesvete,Gradski DV,SESVETE,Vrtić,3 godine do OŠ mješovita,Redoviti,0
+2025-01-01,DV Sesvete,Gradski DV,SESVETE,Vrtić,3 godine do OŠ mješovita,Posebni,0
+2025-01-01,DV Šegrt Hlapić,Gradski DV,SESVETE,Jaslice,1 do 2 godine,Redoviti,0
+2025-01-01,DV Šegrt Hlapić,Gradski DV,SESVETE,Jaslice,1 do 2 godine,Posebni,0
+2025-01-01,DV Šegrt Hlapić,Gradski DV,SESVETE,Jaslice,2 do 3 godine,Redoviti,1
+2025-01-01,DV Šegrt Hlapić,Gradski DV,SESVETE,Jaslice,2 do 3 godine,Posebni,0
+2025-01-01,DV Šegrt Hlapić,Gradski DV,SESVETE,Jaslice,1 do 3 godine mješovita,Redoviti,0
+2025-01-01,DV Šegrt Hlapić,Gradski DV,SESVETE,Jaslice,1 do 3 godine mješovita,Posebni,0
+2025-01-01,DV Šegrt Hlapić,Gradski DV,SESVETE,Vrtić,3 do 4 godine,Redoviti,1
+2025-01-01,DV Šegrt Hlapić,Gradski DV,SESVETE,Vrtić,3 do 4 godine,Posebni,0
+2025-01-01,DV Šegrt Hlapić,Gradski DV,SESVETE,Vrtić,4 do 5 godina,Redoviti,4
+2025-01-01,DV Šegrt Hlapić,Gradski DV,SESVETE,Vrtić,4 do 5 godina,Posebni,0
+2025-01-01,DV Šegrt Hlapić,Gradski DV,SESVETE,Vrtić,5 godina do OŠ,Redoviti,7
+2025-01-01,DV Šegrt Hlapić,Gradski DV,SESVETE,Vrtić,5 godina do OŠ,Posebni,0
+2025-01-01,DV Šegrt Hlapić,Gradski DV,SESVETE,Vrtić,3 godine do OŠ mješovita,Redoviti,6
+2025-01-01,DV Šegrt Hlapić,Gradski DV,SESVETE,Vrtić,3 godine do OŠ mješovita,Posebni,2
+2025-01-01,DAD MALI TIM,Obrt dadilja,DONJI GRAD,,,,0
+2025-01-01,DAD MAMITA,Obrt dadilja,DONJI GRAD,,,,0
+2025-01-01,DAD OSMIJEH,Obrt dadilja,DONJI GRAD,,,,0
+2025-01-01,DAD ČAROBNI KLJUČIĆ,Obrt dadilja,GORNJI GRAD - MEDVEŠČAK,,,,1
+2025-01-01,DAD DOBRA VILA,Obrt dadilja,GORNJI GRAD - MEDVEŠČAK,,,,1
+2025-01-01,DAD MALENI TALENTI JUNIORI,Obrt dadilja,GORNJI GRAD - MEDVEŠČAK,,,,0
+2025-01-01,DAD BUMBICE,Obrt dadilja,TRNJE,,,,0
+2025-01-01,DAD JABUKA,Obrt dadilja,TRNJE,,,,0
+2025-01-01,DAD ZVONČICA,Obrt dadilja,TRNJE,,,,0
+2025-01-01,DAD BUBA LOOBA,Obrt dadilja,PEŠČENICA - ŽITNJAK,,,,0
+2025-01-01,DAD HAPPY HIPPO,Obrt dadilja,PEŠČENICA - ŽITNJAK,,,,0
+2025-01-01,DAD PAJO PATAK,Obrt dadilja,NOVI ZAGREB - ISTOK,,,,0
+2025-01-01,DAD IVANČICA,Obrt dadilja,NOVI ZAGREB - ISTOK,,,,0
+2025-01-01,DAD KIKAČI,Obrt dadilja,NOVI ZAGREB - ZAPAD,,,,0
+2025-01-01,DAD TALALO,Obrt dadilja,NOVI ZAGREB - ZAPAD,,,,0
+2025-01-01,DAD JUHUHU,Obrt dadilja,NOVI ZAGREB - ZAPAD,,,,1
+2025-01-01,DAD HAPPY KIDS,Obrt dadilja,TREŠNJEVKA - SJEVER,,,,0
+2025-01-01,DAD HOLI,Obrt dadilja,TREŠNJEVKA - SJEVER,,,,0
+2025-01-01,DAD HOZENTREGER,Obrt dadilja,TREŠNJEVKA - SJEVER,,,,1
+2025-01-01,DAD NEVERLAND,Obrt dadilja,TREŠNJEVKA - SJEVER,,,,0
+2025-01-01,DAD SVITOGOR,Obrt dadilja,TREŠNJEVKA - SJEVER,,,,0
+2025-01-01,DAD TIKA,Obrt dadilja,TREŠNJEVKA - SJEVER,,,,0
+2025-01-01,DAD MACA PAPUČARICA,Obrt dadilja,TREŠNJEVKA - JUG,,,,1
+2025-01-01,DAD PAHULJICA,Obrt dadilja,TREŠNJEVKA - JUG,,,,0
+2025-01-01,DAD TIGRIĆ,Obrt dadilja,TREŠNJEVKA - JUG,,,,1
+2025-01-01,DAD ZABAVNI SAT,Obrt dadilja,TREŠNJEVKA - JUG,,,,1
+2025-01-01,DAD SAMUEL,Obrt dadilja,TREŠNJEVKA - JUG,,,,0
+2025-01-01,DAD SUNČANI VRT,Obrt dadilja,TREŠNJEVKA - JUG,,,,0
+2025-01-01,DAD ZVONČEK,Obrt dadilja,TREŠNJEVKA - JUG,,,,0
+2025-01-01,DAD DABAR,Obrt dadilja,TREŠNJEVKA - JUG,,,,1
+2025-01-01,DAD ZVJEZDICE - SABOL,Obrt dadilja,TREŠNJEVKA - JUG,,,,0
+2025-01-01,DAD MAMITAS,Obrt dadilja,ČRNOMEREC,,,,0
+2025-01-01,DAD BALLON,Obrt dadilja,ČRNOMEREC,,,,0
+2025-01-01,DAD GRGA ČVARAK,Obrt dadilja,GORNJA DUBRAVA,,,,0
+2025-01-01,DAD DORA ISTRAŽUJE,Obrt dadilja,GORNJA DUBRAVA,,,,0
+2025-01-01,DAD DJEČJI KUTIĆ,Obrt dadilja,GORNJA DUBRAVA,,,,0
+2025-01-01,DAD EMAUS,Obrt dadilja,GORNJA DUBRAVA,,,,0
+2025-01-01,DAD MALI PRINC,Obrt dadilja,GORNJA DUBRAVA,,,,0
+2025-01-01,DAD ŽIRAFICA,Obrt dadilja,GORNJA DUBRAVA,,,,0
+2025-01-01,DAD BUBAMARA,Obrt dadilja,DONJA DUBRAVA,,,,0
+2025-01-01,DAD OGLEDALCE,Obrt dadilja,DONJA DUBRAVA,,,,0
+2025-01-01,DAD BAJKA,Obrt dadilja,STENJEVEC,,,,0
+2025-01-01,DAD DRVO ŽIVOTA,Obrt dadilja,STENJEVEC,,,,0
+2025-01-01,DAD KAP,Obrt dadilja,STENJEVEC,,,,0
+2025-01-01,DAD KORAK PO KORAK,Obrt dadilja,STENJEVEC,,,,1
+2025-01-01,DAD LEPTIRIĆ,Obrt dadilja,STENJEVEC,,,,0
+2025-01-01,DAD LEPTIRIĆI,Obrt dadilja,STENJEVEC,,,,0
+2025-01-01,DAD MALI NOMADI,Obrt dadilja,STENJEVEC,,,,0
+2025-01-01,DAD PČELICE,Obrt dadilja,STENJEVEC,,,,0
+2025-01-01,DAD ZVRK,Obrt dadilja,STENJEVEC,,,,0
+2025-01-01,DAD MAŠTA 1,Obrt dadilja,PODSUSED - VRAPČE,,,,0
+2025-01-01,DAD SREĆA,Obrt dadilja,PODSUSED - VRAPČE,,,,4
+2025-01-01,DAD ŠUMSKA VILA,Obrt dadilja,PODSLJEME,,,,0
+2025-01-01,DAD ZVJEZDICE - KOPIĆ,Obrt dadilja,SESVETE,,,,0
