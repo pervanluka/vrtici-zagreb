@@ -22,5 +22,6 @@ SOFTWARE.
 
 ---
 
-Third-party code in `site/vendor/` is subject to its own licences. See
-`site/vendor/LICENSE` for details.
+Third-party files in `site/vendor/` and `tests/fixtures/` are subject to their
+own licences. See `site/vendor/LICENSE` and `tests/fixtures/README.md` for
+details.

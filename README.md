@@ -19,8 +19,8 @@ python3 -m http.server 8000 --directory site
 ```
 
 Snapshotovi iz 2023. i 2025. su već uključeni (vidi `data/slobodna-mjesta/`).
-Ako je trebate ponovno dohvatiti, pokrenut `python3 scripts/povijest.py` — to
-je jednokratni korak, već izvršen prije prvoga committa.
+Ako ih trebate ponovno dohvatiti, pokrenite `python3 scripts/povijest.py` — to
+je jednokratni korak, izvršen kad su povijesni snapshotovi dodani u repozitorij.
 
 ## Testovi
 
