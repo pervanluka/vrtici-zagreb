@@ -1,0 +1,52 @@
+name: Tjedni obilazak slobodnih mjesta
+
+on:
+  schedule:
+    - cron: "17 5 * * 1"   # ponedjeljkom u 05:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  prikupi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pokreni kolektor
+        id: kolektor
+        run: |
+          python3 scripts/prikupi.py | tee izlaz.txt
+          if grep -q "nema promjene" izlaz.txt; then
+            echo "promjena=ne" >> "$GITHUB_OUTPUT"
+          else
+            echo "promjena=da" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Otvori Pull Request
+        if: steps.kolektor.outputs.promjena == 'da'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          DATUM=$(ls data/slobodna-mjesta/*.csv | grep -v serija | sort | tail -1 | xargs basename | sed 's/.csv//')
+          if [ -z "$DATUM" ]; then
+            echo "Greška: datum nije pronađen u datotekama" >&2
+            exit 1
+          fi
+          GRANA="podaci/$DATUM"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$GRANA"
+          git add data/slobodna-mjesta/
+          git commit -m "podaci: slobodna mjesta na dan $DATUM"
+          git push -u origin "$GRANA"
+          gh pr create \
+            --title "Slobodna mjesta — stanje $DATUM" \
+            --body "$(cat izlaz.txt)
+
+          Automatski dohvat s https://vrtici.zagreb.hr/slobodna-mjesta/187.
+          Kontrolni zbrojevi sa stranice provjereni su prije otvaranja ovog PR-a.
+          Pregledaj promjene i mergeaj."
