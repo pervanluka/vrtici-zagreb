@@ -85,11 +85,26 @@
     return "Broj slobodnih mjesta odnosi se na cijelu ustanovu, ne na pojedini objekt.";
   }
 
+  function datumStanja() {
+    return podaci ? podaci.datum_stanja : undefined;
+  }
+
+  // Podaci se mjesečno osvježavaju s gradskog portala — ime ili adresa s
+  // "&", "<" ili navodnikom jednog dana neće biti iznimka. Koristiti za sve
+  // podatkovne vrijednosti koje se ubacuju u HTML markup (ne za brojeve).
+  function ociscen(v) {
+    return String(v == null ? "" : v)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
   global.VZ = {
     ucitaj: ucitaj,
     filtriraj: filtriraj,
     jedinstveno: jedinstveno,
     napuniOdabir: napuniOdabir,
     oznakaRazine: oznakaRazine,
+    datumStanja: datumStanja,
+    ociscen: ociscen,
   };
 })(window);

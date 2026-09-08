@@ -26,7 +26,7 @@
 </div>
 
 <div id="karta"></div>
-<p class="rezultat" id="rezultat"></p>
+<p class="rezultat" id="rezultat" role="status" aria-live="polite"></p>
 
 <script src="vendor/leaflet.js"></script>
 <script src="app.js"></script>
@@ -58,13 +58,13 @@
   function opis(u) {
     var redovi = u.mjesta.filter(function (m) { return m.slobodnih > 0; })
       .map(function (m) {
-        return "<li>" + [m.dobna_skupina, m.uzrast, m.program].filter(Boolean).join(", ") +
+        return "<li>" + [m.dobna_skupina, m.uzrast, m.program].filter(Boolean).map(VZ.ociscen).join(", ") +
                ": <strong>" + m.slobodnih + "</strong></li>";
       }).join("");
     var kontakt = u.objekti.length
-      ? u.objekti.map(function (o) { return o.naziv + " — " + o.adresa; }).join("<br>")
+      ? u.objekti.map(function (o) { return VZ.ociscen(o.naziv) + " — " + VZ.ociscen(o.adresa); }).join("<br>")
       : "adresa nije dostupna u otvorenim podacima";
-    return "<strong>" + u.naziv + "</strong><br>" + u.cetvrt + " · " + u.vrsta +
+    return "<strong>" + VZ.ociscen(u.naziv) + "</strong><br>" + VZ.ociscen(u.cetvrt) + " · " + VZ.ociscen(u.vrsta) +
            "<ul>" + (redovi || "<li>nema slobodnih mjesta</li>") + "</ul>" +
            "<small>" + kontakt + "<br>" + VZ.oznakaRazine() + "</small>";
   }

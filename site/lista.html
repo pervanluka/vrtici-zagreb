@@ -28,10 +28,10 @@
   <caption class="napomena" id="caption"></caption>
   <thead>
     <tr>
-      <th scope="col" data-polje="naziv" tabindex="0">Ustanova</th>
-      <th scope="col" data-polje="cetvrt" tabindex="0">Gradska četvrt</th>
-      <th scope="col" data-polje="vrsta" tabindex="0">Vrsta</th>
-      <th scope="col" data-polje="slobodnih_prikaz" tabindex="0">Slobodnih mjesta</th>
+      <th scope="col" data-polje="naziv" data-naslov="Ustanova" tabindex="0">Ustanova</th>
+      <th scope="col" data-polje="cetvrt" data-naslov="Gradska četvrt" tabindex="0">Gradska četvrt</th>
+      <th scope="col" data-polje="vrsta" data-naslov="Vrsta" tabindex="0">Vrsta</th>
+      <th scope="col" data-polje="slobodnih_prikaz" data-naslov="Slobodnih mjesta" tabindex="0">Slobodnih mjesta</th>
     </tr>
   </thead>
   <tbody id="tijelo"></tbody>
@@ -78,6 +78,20 @@
       tijelo.appendChild(tr);
     });
     document.getElementById("rezultat").textContent = redovi.length + " ustanova";
+    azurirajZaglavlja();
+  }
+
+  function azurirajZaglavlja() {
+    document.querySelectorAll("th[data-polje]").forEach(function (th) {
+      var aktivno = th.dataset.polje === sortPolje;
+      if (!aktivno) {
+        th.removeAttribute("aria-sort");
+        th.textContent = th.dataset.naslov;
+        return;
+      }
+      th.setAttribute("aria-sort", sortSmjer === 1 ? "ascending" : "descending");
+      th.textContent = th.dataset.naslov + (sortSmjer === 1 ? " ▲" : " ▼");
+    });
   }
 
   document.querySelectorAll("th[data-polje]").forEach(function (th) {
