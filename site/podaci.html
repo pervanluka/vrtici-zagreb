@@ -19,10 +19,11 @@
 
   <h2>Preuzimanje</h2>
   <ul id="preuzimanja">
-    <li><a href="https://github.com/pervanluka/vrtici-zagreb/tree/main/data/slobodna-mjesta">Svi snapshotovi (CSV)</a></li>
+    <li><a href="https://github.com/pervanluka/vrtici-zagreb/tree/main/data/slobodna-mjesta">Sve snimke (CSV)</a></li>
     <li><a href="https://github.com/pervanluka/vrtici-zagreb/blob/main/data/slobodna-mjesta/serija.csv">Vremenska serija (CSV)</a></li>
     <li><a href="data/ustanove.json">Ustanove sa slobodnim mjestima (JSON)</a></li>
     <li><a href="data/serija.json">Agregirana serija (JSON)</a></li>
+    <li><a href="data/ulaganja.json">Kapitalna ulaganja u predškolske ustanove (JSON)</a></li>
   </ul>
 
   <h2>Shema</h2>
@@ -33,27 +34,48 @@
      <a href="https://vrtici.zagreb.hr/slobodna-mjesta/187">vrtici.zagreb.hr</a>, mjesečno,
      i pritom prepisuje prethodni mjesec — povijest se ne čuva. Na portalu otvorenih podataka
      postoje dva skupa o slobodnim mjestima, oba zamrznuta (stanja 1.3.2023. i 1.1.2025.).</p>
-  <p>Ovaj projekt svaki mjesec sprema novi snimak i objavljuje ga kao otvoreni podatak, pa
+  <p>Ovaj projekt svaki mjesec sprema novu snimku i objavljuje je kao otvoreni podatak, pa
      nastaje vremenska serija koja inače ne postoji. Prikupljanje je automatizirano, ali
-     <strong>svaka objava prolazi ljudsku provjeru</strong> prije nego uđe u skup.</p>
+     <strong>svaka nova snimka prolazi ljudsku provjeru</strong> prije nego uđe u skup.</p>
   <p>Kontakt podaci i koordinate ustanova preuzimaju se s
      <a href="https://data.zagreb.hr">data.zagreb.hr</a> pod Otvorenom dozvolom.</p>
 
   <h2>Ograničenja</h2>
   <ul>
     <li>Slobodna mjesta su na razini <strong>matične ustanove</strong>, ne pojedinog objekta.</li>
-    <li>Podatak je mjesečni snimak, ne stanje uživo. Datum stanja naveden je uz svaki prikaz.</li>
-    <li>Snapshot iz 2025. ne pokriva privatne i vjerske vrtiće; onaj iz 2023. ne pokriva obrte dadilja.</li>
+    <li>Podatak je mjesečna snimka, ne stanje uživo. Datum stanja naveden je uz svaki prikaz.</li>
+    <li>Snimka iz 2025. ne pokriva privatne i vjerske vrtiće; ona iz 2023. ne pokriva obrte dadilja.</li>
+    <li><strong>Tri snimke nisu izravno usporedive.</strong> Osim različitog obuhvata vrsta
+        ustanova, snimljene su u različitim mjesecima u godini (ožujak, siječanj, rujan), pa
+        padaju s obje strane upisnog ciklusa. Zbroj slobodnih mjesta ide 83 → 187 → 1237, ali
+        taj rast dobrim dijelom dolazi od šireg obuhvata novije snimke, a ne od stvarnog
+        povećanja broja mjesta. Jedina vrsta ustanove izmjerena u sve tri snimke je
+        <strong>Gradski DV</strong>.</li>
+    <li>Snimka iz 2023. bilježi nazive ustanova onako kako ih izvor piše — bez prefiksa
+        <code>DV</code> / <code>DAD</code> koji nose snimke iz 2025. i 2026. Nazivi ustanova
+        zato se ne mogu izravno uspoređivati između snimaka. Zbrajanje po gradskoj četvrti i
+        po vrsti ustanove, na kojem počivaju prikazi vremenske serije, time nije pogođeno.</li>
+    <li>Na stranici <a href="ulaganja.html">Ulaganja</a> ulaganje se povezuje s ustanovom po
+        nazivu. Kad se naziv ne pogodi, ulaganju se ne može pripisati gradska četvrt i tako je
+        i označeno — to nije tvrdnja da ustanova ne postoji, iako je najčešće riječ o objektu
+        koji se tek gradi.</li>
   </ul>
 
   <h2>Kako provjeriti</h2>
-  <p>Cijeli postupak je otvoren kod pod MIT licencom. Skup se može ponovno proizvesti:</p>
+  <p>Cijeli je postupak objavljen kao otvoreni kod pod MIT licencom. Skup se može ponovno
+     proizvesti:</p>
   <pre><code>git clone https://github.com/pervanluka/vrtici-zagreb
 cd vrtici-zagreb
 python3 scripts/prikupi.py
 python3 scripts/gradi.py</code></pre>
-  <p>Prije zapisa svakog snimka skripta usporedi zbroj redaka s kontrolnim brojkama koje
-     izvor sam objavljuje. Ako se ne poklapaju, snimak se ne objavljuje.</p>
+  <p>Snimka od 1.9.2026. — i svaka sljedeća — nastaje skriptom <code>scripts/prikupi.py</code>,
+     koja prije zapisa usporedi zbroj redaka s osam kontrolnih brojki koje izvorna stranica
+     sâma objavljuje. Ako se ne poklope, snimka se ne zapisuje.</p>
+  <p>Snimke od 1.3.2023. i 1.1.2025. prevedene su iz zamrznutih portalskih skupova skriptom
+     <code>scripts/povijest.py</code>, koja tu provjeru <strong>ne radi automatski</strong>.
+     Njihovi su zbrojevi provjereni ručnim prebrojavanjem prema zbirnim retcima izvora
+     (<code>UKUPNO</code>, <code>SVEUKUPNO</code>): 51 + 32 = 83 mjesta za 2023., odnosno
+     174 + 13 = 187 mjesta za 2025. Oba su skupa zamrznuta i više se ne mijenjaju.</p>
 </main>
 </body>
 </html>

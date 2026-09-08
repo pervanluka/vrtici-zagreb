@@ -27,7 +27,9 @@ nav a { margin-right: 14px; color: var(--tekst); }
 #karta { height: 65vh; min-height: 320px; }
 table { border-collapse: collapse; width: 100%; }
 th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--rub); }
-th { cursor: pointer; background: #fafafa; position: sticky; top: 0; }
+th { background: #fafafa; position: sticky; top: 0; }
+/* pokazivač samo na stupcima koji se stvarno mogu sortirati */
+th[data-polje] { cursor: pointer; }
 .ima { color: var(--ima); font-weight: 600; }
 .nema { color: var(--nema); }
 .rezultat { padding: 8px 16px; color: var(--tiho); font-size: 0.9rem; }

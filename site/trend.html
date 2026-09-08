@@ -23,7 +23,7 @@
 <header>
   <h1>Kretanje slobodnih mjesta</h1>
   <nav><a href="index.html">Karta</a><a href="lista.html">Lista</a><a href="trend.html">Trend</a><a href="ulaganja.html">Ulaganja</a><a href="podaci.html">Podaci</a></nav>
-  <p class="napomena">Svaka točka je jedan mjesečni snimak. Grad objavljuje samo trenutno stanje — ovu seriju čuva ovaj projekt.</p>
+  <p class="napomena">Svaka točka je jedna mjesečna snimka, označena datumom stanja. Grad objavljuje samo trenutno stanje — ovu seriju čuva ovaj projekt. <span id="razina"></span></p>
 </header>
 
 <p class="upozorenje">
@@ -57,6 +57,9 @@
 (function () {
   "use strict";
   var serija = null;
+
+  // Ista rečenica kao na svakom drugom prikazu brojki — vidi spec, odjeljak 4.
+  document.getElementById("razina").textContent = VZ.oznakaRazine();
 
   function nizVrijednosti() {
     var pogled = document.getElementById("pogled").value;

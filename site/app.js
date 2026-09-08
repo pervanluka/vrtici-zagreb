@@ -85,10 +85,6 @@
     return "Broj slobodnih mjesta odnosi se na cijelu ustanovu, ne na pojedini objekt.";
   }
 
-  function datumStanja() {
-    return podaci ? podaci.datum_stanja : undefined;
-  }
-
   // Podaci se mjesečno osvježavaju s gradskog portala — ime ili adresa s
   // "&", "<" ili navodnikom jednog dana neće biti iznimka. Koristiti za sve
   // podatkovne vrijednosti koje se ubacuju u HTML markup (ne za brojeve).
@@ -104,7 +100,6 @@
     jedinstveno: jedinstveno,
     napuniOdabir: napuniOdabir,
     oznakaRazine: oznakaRazine,
-    datumStanja: datumStanja,
     ociscen: ociscen,
   };
 })(window);
