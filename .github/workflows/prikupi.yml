@@ -39,7 +39,15 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
-          DATUM=$(ls data/slobodna-mjesta/*.csv | grep -v serija | sort | tail -1 | xargs basename | sed 's/.csv//')
+          # Datum dolazi iz kolektora, ne s datotečnog sustava. Ako Grad objavi
+          # STARIJI mjesec, leksikografski zadnja datoteka nije ona koja je upravo
+          # zapisana — grana bi dobila ime već mergeanog stanja, guard ispod bi se
+          # okinuo i snimka bi tiho nestala uz zeleni build.
+          DATUM=$(sed -n 's/^nova snimka \([0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}\):.*/\1/p' izlaz.txt)
+          if [ -z "$DATUM" ]; then
+            echo "Kolektor nije prijavio datum nove snimke — ne otvaram PR." >&2
+            exit 1
+          fi
           GRANA="podaci/$DATUM"
           # Postojanje grane NIJE dokaz da PR postoji. Ako je `gh pr create` jednom
           # pao, ovaj korak bi inače tjedno izlazio zeleno dok podaci vise na grani
