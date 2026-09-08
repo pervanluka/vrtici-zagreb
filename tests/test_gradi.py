@@ -171,7 +171,8 @@ class TestSerija(unittest.TestCase):
         self.assertNotIn("TRNJE", s["po_cetvrti"])
 
     def test_po_vrsti_izostavlja_datum_bez_podatka(self):
-        # 2025. je snimljen bez privatnih vrtića; prikaz mora moći reći "nema podatka"
+        # dadilje su izmjerene samo 2025.; za 2026. u ovoj fiksturi nema retka,
+        # pa ključ mora izostati, a ne biti nula — prikaz to razlikuje
         s = gradi.agregiraj_seriju(SERIJA)
         self.assertEqual(s["po_vrsti"]["Obrt dadilja"].get("2026-09-01"), None)
 

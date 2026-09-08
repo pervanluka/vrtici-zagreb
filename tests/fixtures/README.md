@@ -1,7 +1,8 @@
-# Test Fixtures
+# Testne fiksture
 
 ## slobodna-mjesta-2026-09-01.html
 
-Frozen copy of https://vrtici.zagreb.hr/slobodna-mjesta/187 captured on 2026-09-01.
+Zamrznuta kopija stranice <https://vrtici.zagreb.hr/slobodna-mjesta/187>,
+preuzeta 1.9.2026.
 
-Source: Grad Zagreb. Used in parser tests to avoid network calls during test runs.
+Izvor: Grad Zagreb. Koristi se u testovima parsera, da testovi ne diraju mrežu.
