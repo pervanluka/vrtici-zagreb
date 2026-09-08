@@ -23,6 +23,20 @@ SERIJA = KORIJEN / "data" / "slobodna-mjesta" / "serija.csv"
 # ista kanonska shema kao u prikupi.py — jedan izvor istine
 ZAGLAVLJE = ["datum_stanja"] + parsiranje.STUPCI
 
+ULAGANJA = {
+    2023: ("https://opendata.arcgis.com/api/v3/datasets/"
+           "e898521c36224b05b7bc0778632cd91d_0/downloads/data"
+           "?format=geojson&spatialRefId=4326&where=1%3D1"),
+    2024: ("https://hub.arcgis.com/api/v3/datasets/"
+           "f1871e3fd952438e99dcccd63d37e81b_0/downloads/data"
+           "?format=geojson&spatialRefId=4326&where=1%3D1"),
+}
+
+# Naziv polja s planiranim iznosom NIJE isti obrazac kroz godine — provjereno na
+# stvarnim GeoJSON-ovima 8.9.2026.: 2023. piše "Plan2023" (puna godina, veliko P),
+# 2024. piše "plan24" (skraćeno, malo p). Nema uzorka koji pogađa oboje.
+POLJE_IZNOSA = {2023: "Plan2023", 2024: "plan24"}
+
 KONTAKT_SKUPOVI = {
     "gradski": (
         "https://data.zagreb.hr/dataset/10f10ce2-44a0-4a2c-96f5-249f218b3d21"
@@ -54,6 +68,10 @@ def normaliziraj_naziv(naziv):
     k = _bez_dijakritika(naziv).upper()
     k = k.replace("DJECJI VRTIC ", "DV ")
     k = re.sub(r"\s*-\s*(MATICNI OBJEKT|PO\b.*)$", "", k)
+    # skupovi kapitalnih ulaganja koriste zarez umjesto crtice i ponekad
+    # dopisuju adresu iza naziva: 'DV "Medo Brundo", PO Novi Retkovec', 'DV "Bajka", Humska 1'
+    k = re.sub(r"\s*,\s*PO\b.*$", "", k)
+    k = re.sub(r"\s*,\s*.*$", "", k)
     k = re.sub(r"[^A-Z0-9 ]", " ", k)
     return " ".join(k.split())
 
@@ -61,6 +79,34 @@ def normaliziraj_naziv(naziv):
 def kljuc_cetvrti(cetvrt):
     k = _bez_dijakritika(cetvrt).upper()
     return " ".join(re.sub(r"[^A-Z0-9 ]", " ", k).split())
+
+
+def parse_ulaganja(geojson, godina):
+    """GeoJSON kapitalnih ulaganja → samo predškolske ustanove, u obliku za kartu."""
+    polje = POLJE_IZNOSA.get(godina)
+    ulaganja = []
+    for f in geojson.get("features", []):
+        sv = f.get("properties") or {}
+        if (sv.get("Vrsta_objekta") or "").strip().upper() != "PREDŠKOLSKE USTANOVE":
+            continue
+        geom = f.get("geometry") or {}
+        koord = geom.get("coordinates") or [None, None]
+        sirovi_iznos = sv.get(polje) if polje else None
+        iznos = str(sirovi_iznos).strip() if sirovi_iznos is not None else ""
+        ulaganja.append(
+            {
+                "godina": godina,
+                "naziv": (sv.get("naziv") or "").strip(),
+                "kljuc": normaliziraj_naziv(sv.get("naziv") or ""),
+                "adresa": (sv.get("Adresa") or "").strip(),
+                "opis_radova": (sv.get("Opis_radova") or "").strip(),
+                "iznos": int(float(iznos)) if iznos else None,
+                "x": float(koord[0]) if koord[0] is not None else None,
+                "y": float(koord[1]) if koord[1] is not None else None,
+                "postojeca": None,  # popunjava main() kad zna ključeve ustanova
+            }
+        )
+    return ulaganja
 
 
 def ucitaj_iznimke(put=IZNIMKE):
@@ -292,6 +338,27 @@ def main():
     )
     zapisi_provenijenciju(sazetak_snapshota())
     print(f"serija: {len(serija['datumi'])} snimaka; data/README.md osvježen")
+
+    cetvrt_po_kljucu = {u["kljuc"]: u["cetvrt"] for u in ustanove}
+    svi = []
+    for godina, url in ULAGANJA.items():
+        zahtjev = urllib.request.Request(url, headers={"User-Agent": "vrtici-zagreb/1.0"})
+        with urllib.request.urlopen(zahtjev, timeout=60) as odgovor:
+            dio = parse_ulaganja(json.load(odgovor), godina)
+        for u in dio:
+            u["postojeca"] = u["kljuc"] in cetvrt_po_kljucu
+            # samo za postojeće ustanove znamo četvrt (dolazi iz spojene tablice
+            # slobodnih mjesta) — za planirane objekte izvor nema taj podatak.
+            u["cetvrt"] = cetvrt_po_kljucu.get(u["kljuc"])
+        print(f"ulaganja {godina}: {len(dio)} predškolskih, "
+              f"{sum(1 for u in dio if u['postojeca'])} spojeno s postojećom ustanovom")
+        svi.extend(dio)
+    (IZLAZ / "ulaganja.json").write_text(
+        json.dumps({"godine": sorted(ULAGANJA), "ulaganja": svi},
+                   ensure_ascii=False, separators=(",", ":")),
+        encoding="utf-8",
+    )
+    print(f"zapisano → {(IZLAZ / 'ulaganja.json').relative_to(KORIJEN)}")
     return 0
 
 
