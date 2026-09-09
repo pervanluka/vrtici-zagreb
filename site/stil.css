@@ -68,6 +68,9 @@ body {
   color: var(--tinta);
   background: var(--podloga);
   -webkit-font-smoothing: antialiased;
+  /* Nazivi polja i URL-ovi u tekstu su dugi nizovi bez mjesta za prijelom;
+     bez ovoga shema u <code> na podaci.html gura stranicu u vodoravni pomak. */
+  overflow-wrap: break-word;
 }
 
 a { color: var(--akcent); }
@@ -194,7 +197,7 @@ h3 {
   padding: 12px 14px; min-height: 44px; width: 100%;
   appearance: none;
 }
-.filtri select:disabled { color: var(--tiho); background: var(--traka); }
+.filtri label:has(select:disabled) { display: none; }
 .filtri input[type="search"]::placeholder { color: var(--tiho); font-weight: 400; }
 /* Potvrdni okvir ostaje uz svoj natpis u jednom retku, meta ≥ 24px. */
 .filtri .prekidac {
@@ -206,9 +209,15 @@ h3 {
 
 /* ---------- tablice ---------- */
 
+/* overflow-x drži široku tablicu unutar plohe umjesto da gura stranicu u
+   vodoravni pomak (bez njega: 140px na listi, 206px na ulaganjima pri 390px).
+   Ali time omot postaje scroll-kontejner, pa se ljepljivi `th` lijepi za
+   NJEGOV scrollport — a okomito se pomicala stranica, zbog čega zaglavlje
+   nije stajalo. max-height vraća i okomito pomicanje u omot, gdje se `th`
+   ima za što uhvatiti. */
 .tablica-okvir {
   background: var(--ploha); border-radius: var(--r-velik);
-  box-shadow: var(--sjena-ploha); overflow-x: auto; margin: 0 0 16px;
+  box-shadow: var(--sjena-ploha); overflow-x: auto; max-height: 70vh; margin: 0 0 16px;
 }
 table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
 caption {
@@ -328,6 +337,10 @@ tbody tr:hover td { background: var(--podloga); }
   font-family: var(--naslovni); font-size: 25px; font-weight: 700;
   letter-spacing: -0.03em; margin-top: 7px; line-height: 1.1;
 }
+/* --nema na 3.78:1 prolazi SAMO kao veliki tekst (25px/700, prag 3:1) iz
+   .vrsta .niz iznad — smanji li se font, pada ispod praga. Nije isto što i
+   klasa .nema gore, koja boji stvarne "0" vrijednosti i zato koristi --tiho
+   na 5.81:1. */
 .vrsta .niz .prazno { color: var(--nema); }
 .vrsta .stanje { font-size: 13.5px; color: var(--tiho); margin-top: 8px; }
 .vrsta.potpuna .stanje { color: var(--ima); font-weight: 500; }
@@ -366,7 +379,7 @@ tbody tr:hover td { background: var(--podloga); }
   .brojke { grid-template-columns: 1fr; }
   .brojka--glavna { grid-column: span 1; }
   #karta { height: 55vh; }
-  .legenda { flex-direction: column; gap: 8px; right: 10px; bottom: 10px; }
+  .legenda { flex-direction: column; gap: 8px; right: 10px; bottom: 32px; }
   th, td { padding: 10px 14px; }
   caption { padding: 14px 14px 0; }
 }

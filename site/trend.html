@@ -161,7 +161,7 @@
         var niz = serija.datumi.map(function (d) {
           return Object.prototype.hasOwnProperty.call(tocke, d)
             ? String(tocke[d])
-            : '<span class="prazno" aria-label="nema podatka">—</span>';
+            : '<span class="prazno">—</span>';
         }).join(" → ");
         var kartica = document.createElement("div");
         kartica.className = "vrsta" + (nedostaju.length ? "" : " potpuna");

@@ -152,7 +152,7 @@
                 '<text class="oznaka" x="' + br(x(i)) + '" y="' + (GORE + visina / 2 + 15) +
                 '" text-anchor="middle">' + datum.slice(0, 7) + "</text>";
         oznakeX += '<text class="oznaka" x="' + br(x(i)) + '" y="284" text-anchor="middle">' +
-                   mjesecGodina(datumi[i]) + "</text>";
+                   ociscen(mjesecGodina(datumi[i])) + "</text>";
         return;
       }
       crta += (zapoceto ? " L" : " M") + br(x(i)) + "," + br(y(v));
@@ -162,7 +162,7 @@
                '<text class="vrijednost-tocke" x="' + br(x(i)) + '" y="' + br(y(v) - 18) +
                '" text-anchor="middle">' + v + "</text>";
       oznakeX += '<text class="oznaka" x="' + br(x(i)) + '" y="284" text-anchor="middle">' +
-                 mjesecGodina(datumi[i]) + "</text>";
+                 ociscen(mjesecGodina(datumi[i])) + "</text>";
     });
 
     svg.setAttribute("viewBox", "0 0 " + W + " " + H);
