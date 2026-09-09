@@ -214,7 +214,8 @@ h3 {
    Ali time omot postaje scroll-kontejner, pa se ljepljivi `th` lijepi za
    NJEGOV scrollport — a okomito se pomicala stranica, zbog čega zaglavlje
    nije stajalo. max-height vraća i okomito pomicanje u omot, gdje se `th`
-   ima za što uhvatiti. */
+   ima za što uhvatiti. Vidi i mobilni prijelom na dnu — tamo se max-height
+   namjerno miče. */
 .tablica-okvir {
   background: var(--ploha); border-radius: var(--r-velik);
   box-shadow: var(--sjena-ploha); overflow-x: auto; max-height: 70vh; margin: 0 0 16px;
@@ -380,6 +381,15 @@ tbody tr:hover td { background: var(--podloga); }
   .brojka--glavna { grid-column: span 1; }
   #karta { height: 55vh; }
   .legenda { flex-direction: column; gap: 8px; right: 10px; bottom: 32px; }
+  /* NAMJERNO: na telefonu nema max-height, pa nema ni ljepljivog zaglavlja.
+     S njim tablica postaje ugniježđeno područje pomicanja (105 redaka,
+     6424px u okviru od 490px) i prst koji povlači stranicu umjesto toga
+     pomiče tablicu — do sadržaja ispod dolazi se samo rubom zaslona. Glavni
+     korisnik ove stranice je roditelj na telefonu; ljepljivo zaglavlje široke
+     tablice tu vrijedi manje od normalnog pomicanja stranice. overflow-x
+     ostaje, pa se široka tablica i dalje pomiče postrance unutar plohe.
+     Ne vraćaj max-height ovdje. */
+  .tablica-okvir { max-height: none; }
   th, td { padding: 10px 14px; }
   caption { padding: 14px 14px 0; }
 }
