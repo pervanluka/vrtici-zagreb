@@ -5,3 +5,6 @@ __pycache__/
 # radni prostor i interna dokumentacija — ne ide javno
 .superpowers/
 docs/
+
+# privremeni profili preglednika iz lokalnih provjera
+.scratch/
