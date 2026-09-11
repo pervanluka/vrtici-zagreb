@@ -106,7 +106,12 @@ a:hover { color: var(--akcent-t); }
   text-decoration: none; padding: 10px 17px; border-radius: var(--r-pilula);
   color: var(--tekst); font-size: 14px; font-weight: 500; line-height: 1.2;
 }
+/* Bez ovoga Chrome na Androidu pri dodiru crta vlastiti sivi pravokutnik koji ne
+   prati border-radius, pa pilula na trenutak izgleda kockasto. Gasimo ga i
+   povratnu informaciju o dodiru dajemo sami, kroz :active, u obliku pilule. */
+.navigacija a { -webkit-tap-highlight-color: transparent; }
 .navigacija a:hover { color: var(--tinta); background: rgba(255,255,255,0.65); }
+.navigacija a:not([aria-current]):active { background: rgba(255,255,255,0.9); }
 .navigacija a[aria-current="page"] {
   background: var(--tinta); color: var(--ploha); font-weight: 600;
 }
@@ -389,6 +394,26 @@ tbody tr:hover td { background: var(--podloga); }
      tablice tu vrijedi manje od normalnog pomicanja stranice. overflow-x
      ostaje, pa se široka tablica i dalje pomiče postrance unutar plohe.
      Ne vraćaj max-height ovdje. */
+  /* Pet pilula se na uskom zaslonu prelamalo u dva reda, a spremnik s pozadinom
+     i pilula-radijusom pritom postane visoka zaobljena ploha. Umjesto prelamanja
+     navigacija dobiva vlastiti red pune širine, a stavke jednako dijele prostor
+     (flex-basis 0), pa je razmak između njih uvijek isti bez obzira na duljinu
+     natpisa. white-space: nowrap sprječava prelamanje unutar same pilule. */
+  .navigacija {
+    width: 100%; flex-wrap: nowrap; gap: 1px; justify-content: stretch;
+  }
+  .navigacija a {
+    flex: 1 1 0; min-width: 0;
+    padding: 14px 2px; text-align: center;
+    /* Natpisi su različite duljine ("Lista" vs "Ulaganja"), a pilule su jednake
+       širine, pa se veličina slova veže uz širinu zaslona: na 360px ispadne
+       ~11.5px, na 430px ~13px. Gornja i donja granica drže je u čitljivom
+       rasponu. Ako bi na iznimno uskom zaslonu ipak bilo pretijesno, tekst se
+       skrati trotočjem — nikad se ne prelomi u drugi red. */
+    font-size: clamp(11px, 3.2vw, 13px);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+
   .tablica-okvir { max-height: none; }
   th, td { padding: 10px 14px; }
   caption { padding: 14px 14px 0; }
