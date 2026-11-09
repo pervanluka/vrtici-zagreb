@@ -22,6 +22,7 @@ Grada Zagreba (<https://data.zagreb.hr>), pod Otvorenom dozvolom.
 | 2025-01-01 | 894 | 187 | Gradski DV, Obrt dadilja |
 | 2026-09-01 | 1030 | 1237 | Gradski DV, Obrt dadilja, Privatni i vjerski DV |
 | 2026-10-01 | 1030 | 1012 | Gradski DV, Obrt dadilja, Privatni i vjerski DV |
+| 2026-11-01 | 1030 | 958 | Gradski DV, Obrt dadilja, Privatni i vjerski DV |
 
 ## Ograničenja
 
